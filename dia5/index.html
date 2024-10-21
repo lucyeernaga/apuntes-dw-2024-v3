@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Día 5</title>
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            margin: 10px;
+
+            /* sombra interna (si pongo inset, si no lo pongo es una sombra externa) */
+            box-shadow: inset 10px 10px 10px rgb(139,105,41);
+
+             /* borde dibujado a mano */
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 225px;
+
+            /* border-top-left-radius: 225px 15px;
+            border-top-right-radius: 15px 225px;
+            border-bottom-right-radius: 225px 15px 
+            border-bottom-left-radius: 15px 225px*/
+
+            /* sombra de la caja x fuera*/
+            filter: drop-shadow(2px 2px 2px  rgba(0,0,0,0.5)  );
+
+            /* color de texto */
+            color: rgb(27, 27, 27);
+
+
+            border: 2px solid black;
+            background-color: #eb9d37;
+            0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f
+        }
+
+        .inline {
+            display: inline;
+
+        }
+
+        .block {
+            display: block;
+
+        }
+
+        .inline-block {
+            display: inline-block;
+
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #promo {
+            color: red;
+         }
+
+
+
+        /* <p> */
+        p {
+            color: red;
+        }
+
+
+        /* <cualquierEtiqueta id="p"> */
+        #p {
+            color: red;
+        }
+
+
+        /* <cualquierEtiqueta class="p"> */
+        .p {
+            color: red;
+        }    
+
+
+        
+
+    </style>
+</head>
+<body>
+    <h1>Display</h1>
+
+    <h2>Display Inline</h2>
+
+    <div>
+       Ejemplo inline
+        <span class="box inline">Caja 1</span>
+        <span class="box inline">Caja 2</span>. Estos elementos no tiene height o width, tampoco puedo aplicar top/bottom margin.
+    </div>
+
+    <h2>Display Block</h2>
+
+    <div>
+        Ej block:
+        <span id="promo" class="box block">Caja 1</span>
+        <span class="box block">Caja 2</span>
+    </div>
+    
+
+    <h2>Display inline-block</h2>
+
+
+    <div>
+        Ejemplo inline-block <br>
+        <span class="box inline-block">Caja 1</span>
+        <span class="box inline-block">Caja 2</span> 
+        <br>
+        El inline block se comporta como Block pero sin agregar el break line al final.
+    </div>
+    
+
+    <h2>Display none</h2>
+
+   
+    <div>
+        la caja 2 no deberia verse <br>
+        <span class="box inline-block">Caja 1</span>
+        <span class="box inline-block hidden">Caja 2</span>></span>
+        <span class="box inline-block">Caja 3</span>></span>
+    </div>
+
+</body>
+</html>
