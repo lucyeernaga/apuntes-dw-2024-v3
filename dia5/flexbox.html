@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            padding: 7px;
+            margin: 10px;
+
+            /* sombra interna (si pongo inset, si no lo pongo es una sombra externa) */
+            box-shadow: inset 10px 10px 10px rgb(139,105,41);
+
+             /* borde dibujado a mano */
+            border-radius: 255px 15px 225px 15px / 15px 225px 15px 225px;
+
+            /* border-top-left-radius: 225px 15px;
+            border-top-right-radius: 15px 225px;
+            border-bottom-right-radius: 225px 15px 
+            border-bottom-left-radius: 15px 225px*/
+
+            /* sombra de la caja x fuera*/
+            filter: drop-shadow(2px 2px 2px  rgba(0,0,0,0.5)  );
+            /* color de texto */
+            color: rgb(27, 27, 27);
+
+
+            border: 4px solid black;
+            background-color: #eb9d37;
+        }
+
+        .boxDoble {
+            width: 200px;
+        }
+
+        .flexx {
+            display: flex;
+            gap: 4px;
+        }
+
+        .purpleBox {
+            background-color: purple;
+            padding: 5px;
+            height: 1000px;
+        }
+
+        .ej1 {
+            /* flex-direction: column;
+            flex-direction: column-reverse;
+            flex-direction: row; */
+            flex-direction: row-reverse;
+        }
+
+        .ej2 {
+            flex-wrap: nowrap;/*por defecto */
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+        }
+
+        .ej3 {
+            flex-direction: column;
+            justify-content: flex-start; /*por defecto a la izq/arriba*/
+            justify-content: flex-end; /*a la dcha/abajo*/
+            justify-content: center; /*para que se ponga en el centro*/
+            justify-content: space-evenly; /*distribuye el espacio entre todos los elementos*/
+            justify-content:space-between; /*deja los margenes a los costados y los del medio los distribuye*/
+            justify-content: space-around; /*es como space-evenly, pero en los costados distribuye la mitad del espacio que esta entre los elem. */
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox</h1>
+
+    <h2>Flex Direction</h2>
+
+    <div class="flexx ej1">
+        <div class="box">1</div>
+        <div class="box boxDoble">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+
+    </div>
+
+    <h2>Flex Wrap</h2>
+
+    <div class="flexx ej2">
+        <div class="box">1</div>
+        <div class="box boxDoble">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+
+    </div>
+
+    <h2>Justify Content</h2>
+
+    <div class="flexx ej3 purpleBox">
+        <div class="box">1</div>
+        <div class="box boxDoble">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+
+    </div>
+
+    <h2>Align Items</h2>
+
+    <div class="flexx ej4 purpleBox">
+        <div class="box">1</div>
+        <div class="box boxDoble">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+
+    </div>
+
+    <h2>Flex Grow</h2>
+
+    <div class="flexx ej5 purpleBox">
+        <div class="box">1</div>
+        <div class="box boxDoble">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+
+    </div>
+
+</body>
+</html>
