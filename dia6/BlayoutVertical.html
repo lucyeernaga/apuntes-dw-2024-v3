@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Layout Vertical</title>
+
+    <style>
+        /* reset de CSS */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header, .footer {
+            background-color: aliceblue;
+            padding: 10px;
+        }
+         
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh; /*vh = view height - ocupa al menos el 100% de l altura del veiwport*/
+        }
+
+        .content {
+            flex: 1; /* se pone flex 1 para que el content ocupe tanto como pueda*/
+            background-color: #e0e0e0;
+            padding: 10px;
+
+
+            /* opcional para ver el footer permanentemente */
+            overflow-y: scroll; /*overflow vertical*/
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- el container es la caja principal que tiene mis otros div -->
+    <div class="container">
+
+
+        <div class="header">
+            Header
+        </div>
+
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore maiores quia aliquid et rem deserunt, nisi quos sequi laborum optio voluptatem maxime voluptas, quo tenetur? Officiis in dolores ratione nemo!
+            Qui cupiditate asperiores voluptatibus cumque autem maxime debitis consequuntur. Incidunt delectus error amet veniam fugit exercitationem, quos quibusdam ea porro esse cum iusto accusamus facere debitis quisquam voluptate nesciunt voluptatum.
+            At tempora in omnis laboriosam sint, laudantium, dolore repudiandae est sequi praesentium, sunt commodi fugiat magni nemo corporis inventore molestiae. A vero ea odit aliquam ab rem totam laboriosam optio.
+            Ullam cumque hic inventore nostrum ex aspernatur deleniti provident error doloremque, saepe dolor explicabo dolore ab! Dolorum alias aperiam laborum ratione facere et maxime. Sit in sequi amet est enim?
+            Saepe architecto in numquam voluptatibus possimus, ipsum distinctio error. Ipsa possimus similique aperiam repellendus cupiditate, consectetur, autem ipsam iusto magnam suscipit, fugit accusamus. Quod facere debitis velit. Eveniet, minus autem.
+            Nemo recusandae praesentium impedit delectus. Ullam dolores sed ex fuga nam cupiditate ipsum hic saepe odit nostrum voluptates aperiam, eius sapiente quisquam quia quo illum explicabo quas nemo consequuntur esse.
+            Voluptatem repellat asperiores veniam, sequi porro officiis. Architecto, beatae iste corporis cupiditate asperiores in optio perspiciatis inventore, illo nostrum iure necessitatibus dolorem error officia molestias accusantium rerum cum repudiandae. Velit!
+            Pariatur animi incidunt, eligendi rem esse explicabo inventore quis sapiente sequi modi consequatur ullam natus mollitia molestias ex voluptate accusamus atque ad porro quisquam eveniet, optio ab enim iusto. Amet?
+            Magnam, ratione? Reiciendis sint omnis iste recusandae, vel eligendi tempore nesciunt ad dolore ducimus voluptates id cumque veritatis incidunt blanditiis, expedita rem? Nihil laudantium numquam quaerat similique sed neque pariatur!
+            Delectus accusamus, obcaecati, nihil distinctio consequatur deleniti voluptatum quam animi fuga ratione, ipsa consectetur debitis voluptas a et. Sed dolorem, ut dolores itaque repellat dicta fugit asperiores earum hic quam!
+        </div>
+
+        <div class="footer">
+            Footer
+        </div>
+
+
+    </div>
+</body>
+</html>

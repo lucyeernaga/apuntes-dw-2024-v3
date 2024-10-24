@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(45, 44, 44);
+            color: white;
+            padding: 10px;
+        }
+
+       .menu ul {
+            gap: 10px;
+            display: flex;
+            list-style: none;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .content {
+            flex: 1;
+            background-color: #e0e0e0;
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .contenido1 li a{
+            padding: 10px;
+            list-style: none;
+        }
+
+        .contenido2 {
+            padding: 10px;
+        }
+
+       
+        .footer {
+            background-color: rgb(45, 44, 44);
+            color: white;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="container">
+            <div class="header">
+                <p>Logo</p>
+                <div class="menu">
+                    <ul>
+                        <li><a href="./">Inicio</a></li>
+                        <li><a href="./">Acerca de</a></li>
+                        <li><a href="./">Servicios</a></li>
+                        <li><a href="./">Contacto</a></li>
+                    </ul>
+                    
+                </div>
+               
+        </div>
+
+        <div class="content">
+                <div class="contenido1">
+                <h2>Barra lateral</h2>
+                <ul>
+                    <li><a href="./">Enlace 1</a></li>
+                    <li><a href="./">Enlace 2</a></li>
+                    <li><a href="./">Enlace 3</a></li>
+                </ul>
+                </div>
+
+                <div class="contenido2">
+                    <h2>Contenido principal</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet quam, ut consectetur dolorem alias nemo corrupti est dicta ratione.
+                    </p>
+                </div>
+
+        </div>
+
+        <div class="footer">
+                <p>Derechos de autor C 2024 Nombre de la empresa.</p>
+        </div>
+        </div>
+</body>
+</html>
