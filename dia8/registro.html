@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <style>
+        input {
+            display: block;
+           
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <form action="./registro.html" method="get">
+
+        <fieldset>
+
+            <legend>Información básica</legend>
+
+
+            <!-- Usuario -->
+            <label for="user">Nombre</label>
+            <input id="user" placeholder="Ingresa tu usuario" type="text" name="user" required>
+
+            <!-- Correo -->
+            <label for="email">Email</label>
+            <input id="email" type="text" name="email" required>
+
+            <!-- Clave -->
+            <label for="pass">Clave</label>
+            <input id="pass" placeholder="4caracteres" type="passsword" name="pass" required>
+            
+            <!-- Confirmar Clave-->
+            <label for="pass2">Confirmar Clave</label>
+            <input id="pass2" type="password" name="pass2" required>
+    
+            <!-- Edad -->
+            <label for="age">Edad</label>
+            <input id="age" type="number" name="age">
+
+            <!-- Genero -->
+            <!-- Los grupos de botones de radio deben tener el mismo name -->
+           
+            <label><input type="radio" name="gender" value="male">Hombre</label>
+            <label><input type="radio" name="gender" value="female">Mujer</label>
+            
+
+            <br><br><br>
+            <label><input type="checkbox" name="gender2" value="male">Hombre</label>
+            <label><input type="checkbox" name="gender2" value="female">Mujer</label>
+            <label><input type="checkbox" name="gender2" value="male">Hombre</label>
+            <label><input type="checkbox" name="gender2" value="female">Mujer</label>
+
+        
+            <br>
+            <label for="info">Descripcion</label><br>
+             <textarea id="info" name="descripcion" cols="30" rows="10">
+               
+             </textarea>
+
+
+        </fieldset>
+     
+
+    </form>
+
+    
+</body>
+</html>
