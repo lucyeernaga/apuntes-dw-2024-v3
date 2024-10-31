@@ -14,8 +14,7 @@
 
         .container {
             display: flex;
-
-
+            bottom: 0;
         }
 
         .box {
@@ -23,7 +22,6 @@
             height: 100px;
             border: 1px solid #ccc;
             background-color: #f0f0f0;
-
         }
 
         .yellow {
@@ -32,11 +30,26 @@
             left: 20px;
         }
 
+        /* las diferentes posiciones */
         .static {
             position: static;
         }
 
+        .relative {
+            position: relative;
+        }
 
+        .absolute {
+            position: absolute;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+
+        .sticky {
+            position: sticky;
+        }
     </style>
 </head>
 <body>
@@ -44,25 +57,62 @@
 
 
     <h2>Static</h2>
-    <p>Normal, no se aplica ninguna propiedad de posición. Utiliza el flujo/ flow normal del documento</p>
-
+    <!-- <p>Por defecto, no se aplica ninguna propiedad de posición. Utiliza el flujo/ flow normal del documento</p> -->
     <div class="container">
         <div class="box"></div>
-        <div class="box yelow static">Static</div>
+        <div class="box yellow static">Static</div>
         <div class="box"></div>
     </div>
 
 
+
     <h2>Relative</h2>
+    <!-- <p>Afecta la posicion <strong>top, right, bottom, left</strong>, y conserva su espacio.</p> -->
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow relative">Relative</div>
+        <div class="box"></div>
+    </div>
+
 
 
     <h2>Absolute</h2>
+    <!-- <p>Afecta la posicion <strong>top, right, bottom, left</strong> pero no ocupa su espacio original (es como que queda flotando sobre los otros elementos) 
+    <br> Se posiciona con respecto al padre mas cercano que tenga una propiedad position diferente de STATIC (normalmente relative).
+    Si no lo encuentra, usa el body.
+    </p> -->
+    <div class="container relative">
+        <div class="box"></div>
+        <div class="box yellow absolute">Absolute</div>
+        <div class="box"></div>
+    </div>
+
 
 
     <h2>Fixed</h2>
+    <!-- <p>Afecta las position, no ocupa espacio, se posiciona respecto al navegador (viewport), se mantiene fijo en la pantalla (no se mueve incluso con scroll)</p> -->
+    <div class="container">
+        <div class="box"></div>
+        <div class="box yellow fixed" 
+        style="right: 20px; 
+               bottom: 20px; 
+               left: unset; 
+               top: unset;">Fixed</div>
+        <div class="box"></div>
+    </div>
+
 
 
     <h2>Sticky</h2>
+    <div class="container" style="height: 300px;
+                                  width: 400px;
+                                  overflow: scroll;
+                                  padding: 20px;
+                                  border: 1px solid gray;">
+        <div class="box"></div>
+        <div class="box yellow sticky">Sticky</div>
+        <div class="box" style="height: 2000px"></div>
+    </div>
     
 </body>
 </html>

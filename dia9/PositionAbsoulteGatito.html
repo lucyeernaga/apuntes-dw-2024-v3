@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Absolute Gatito</title>
+
+
+    <style>
+        
+        .container {
+            width: 300px;
+            position: relative;
+        }
+        
+        .img {
+            width: 100%;
+            opacity: 0.5; /*50% de traslucido*/
+        }
+
+        .box {
+            position: absolute;
+            border: 1px solid red;
+        }
+
+        .topleft {
+            top: 10px;
+            left: 10px;
+        }
+
+        .topright {
+            top: 10px;
+            right: 10px;
+        }
+
+        .center {
+            top: 50%;
+            width: 100%;
+            text-align: center;
+
+            /* centrado perfecto */
+            left: 50%;
+            transform: translate (-50%, -50%);
+        }
+
+        .bottomleft {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .bottomright {
+            bottom: 10px;
+            right: 10px;
+        }
+
+       
+
+    </style>
+</head>
+<body>
+    <h1>Position Absolute Gatito</h1>
+    <p>Recrear esta imagen en HTML, utilizando position</p>
+
+    <div class="container relative">
+        <img src="https://www.hola.com/imagenes/mascotas/20201104178485/consejos-gatos-para-principiantes/0-884-859/gatito-m.jpg?im=Resize=(680)" alt="Imagen del gatito">
+        <div class="box topleft">Arriba - Izq</div>
+        <div class="box topright">Arriba - Dcha</div>
+        <div class="box center">Center (w100)</div>
+        <div class="box bottomleft">Abajo - Izq</div>
+        <div class="box bottomright">Abajo - Dcha</div>
+    </div>
+
+
+
+    
+</body>
+</html>
