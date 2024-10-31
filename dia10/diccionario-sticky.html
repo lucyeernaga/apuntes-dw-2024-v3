@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diccionario Sticky</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+        }
+
+        .categoria div {
+            font-size: 18px;
+            line-height: 21px;
+            border-top: 1px solid #ccc;
+            padding: 0 12px;
+
+            text-transform: capitalize; /* existen capitalize y uppercase*/
+        }
+
+        /* es lo mismo que = .letra {} */
+        .cateogria div:first-child {
+            background-color: darkgray;
+            color: white;
+            border-bottom: 1px solid black;
+
+            position: sticky;
+            top: 20px
+        }
+
+        .footer {
+            height: 1000px;
+        }
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <div class="categoria">
+        <div class="letra">A</div> 
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div> 
+    </div>
+
+    <div class="categoria">
+        <div class="letra">C</div>
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div> 
+    </div>
+
+    <div class="categoria">
+        <div class="letra">E</div>
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div> 
+    </div>
+
+    <div class="categoria">
+        <div class="letra">T<A/div>
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+            <div>Item 5</div> 
+    </div>
+    
+    <div class="categoria">
+        <div class="footer">Footer</div>
+    </div>
+
+    
+</body>
+</html>

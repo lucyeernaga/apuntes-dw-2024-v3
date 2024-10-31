@@ -104,14 +104,18 @@
 
 
     <h2>Sticky</h2>
+    <!-- Comportamiento combinado entre Static y Fixed.
+     Utiliza el top y left como punto de adhesión.
+     Se posiciona respoecto a la ventana del navegador (viewport)
+     Se queda fijo en la pantalla (fixed) hasta que el elemento padre s -->
     <div class="container" style="height: 300px;
                                   width: 400px;
                                   overflow: scroll;
                                   padding: 20px;
                                   border: 1px solid gray;">
-        <div class="box"></div>
-        <div class="box yellow sticky">Sticky</div>
-        <div class="box" style="height: 2000px"></div>
+        <div class="box" style="margin-top: 100px;"></div>
+        <div class="box yellow sticky" style="margin-top: 100px;">Sticky</div>
+        <div class="box" style="height: 2000px; margin-top: 100px;"></div>
     </div>
     
 </body>
