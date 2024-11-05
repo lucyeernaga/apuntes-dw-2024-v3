@@ -1,3 +1,42 @@
+# JAVA SCRIPT
+
+los comentarios en JS se escriben con esas barras: //
+
+// Soy un comentario de 1 línea
+
+/* Soy un comentario multilínea 
+   HOLA!!
+*/
+
+
+En JavaScript, `const` se usa para **crear una variable que no puedes cambiar** después de asignarle un valor.
+
+Lo importante de `const`:
+- **Una vez que le das un valor a una variable con `const`, no puedes cambiar ese valor más adelante.**
+  
+### Ejemplo:
+
+```javascript
+const edad = 25;
+edad = 30;  // Esto da error porque no puedes cambiar 'edad' después de asignarle un valor.
+```
+
+### Pero con objetos o arreglos, funciona diferente:
+Si usas `const` con un objeto o arreglo, no puedes cambiar el **objeto o arreglo completo**, pero puedes cambiar lo que está dentro de él.
+
+```javascript
+const persona = { nombre: "Juan", edad: 25 };
+persona.edad = 26;  // Esto está bien, puedes cambiar las propiedades dentro del objeto.
+persona = { nombre: "Carlos", edad: 30 };  // Esto da error, no puedes reasignar el objeto completo.
+```
+
+En resumen:
+- **`const` asegura que no puedas cambiar el valor de la variable después de asignarlo**.
+- Si la variable es un objeto o arreglo, puedes cambiar lo que hay dentro de él, pero no la variable en sí. -->
+
+
+
+
 * {
             box-sizing: border-box;
             margin: 0;

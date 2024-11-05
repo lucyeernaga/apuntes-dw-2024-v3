@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Positions Layout</title>
+    <title>Layout Positions</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         * {
@@ -12,19 +14,48 @@
             padding: 0;
         }
 
+        .body {
+            display: flex;
+            flex-direction: column;
+            /*desactivar para cuando usemos el position sticky*/
+            /* height: 100vh; */
+            gap: 20px;
+        }
+
+        .container {
+            background-color: #171717;
+            display: flex;
+            width: 100%;
+            flex-grow: 1;
+            gap: 20px;  /*determina el espacio entre elementos en un diseño de cuadrícula, de varias columnas o flexible (todos los bloques se separan 20px unos de otros)*/
+        }
+
         .header {
             height: 100px;
             background-color: #1EAAFC;
             background-image: linear-gradient(160deg, #6C52D9 0%, #9B8AE6 127%);
 
-            /*position sticky*/
+            /* position sticky */
             position: sticky;
-            top: 0;
+            top: 0; /* obligatorio agregar un top o left para sticky*/
         }
 
         .sidebar {
             background-image: linear-gradient(203deg, #3EDFD7 0%, #29A49D 90%);
             width: 200px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; /*(la columna va a ocupar todo lo que el sidebar me haya dejado de espacio)*/
+            gap: 20px; /*content-1 se separa 20px de los otros*/
+        }
+
+        .content-row {
+            display: flex;
+            flex-grow: 1; /*flex-grow:1; para que coja todo el contenedor*/
+            gap: 20px; /* para separar el content-2 del content-3 */
         }
 
         .content-1,
@@ -49,38 +80,47 @@
             font-weight: bold;
         }
 
-        .container {
-            display: flex;
-            width: 100%;
-            flex-grow: 1;
-            gap: 20px;  /*determina el espacio entre elementos en un diseño de cuadrícula, de varias columnas o flexible*/
+        .footer {
+            height: 100px;
+            /* position sticky */
+            position: sticky;
+            bottom: 0;
         }
 
-        .main .item {
+
+        /* estos no son todos los items, solo los que están dentro de main*/
+        .main .item { 
             height: 200px;
         }
 
-        .footer {
-            height: 100px;
-            background-color: #1EAAFC;
-            background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
 
-            position: sticky;
-            bottom: 0%;
+
+        /* botón de whatsapp */
+        .whatsapp {
+            position: fixed;
+            bottom: 150px;
+            right: 20px;
+
+            background-color: white;
+            border-radius: 50%;
+            width: 39px;
+            height: 39px;
         }
 
-
-
+        .whatsapp i {
+            font-size: 48px;
+            color: green;
+            margin-top: -3px;
+            margin-left: -1px;
+        }
     </style>
 </head>
 <body>
     <!-- mi header -->
-    <div class="header item"> 
-        header 
-    </div>
+    <div class="header item">header</div>
 
     <!-- mi container -->
-    <div class="container item">
+    <div class="container">
         <div class="sidebar item">
             sidebar
         </div>
@@ -95,15 +135,51 @@
                 <div class="content-2 item">content-2</div>
                 <div class="content-3 item">content-3</div>
             </div>
-
-
         </div>
+
+
+
+        <!-- Icono de Whatsapp -->
+        <div class="whatsapp">
+            <i class="fa fa-whatsapp"></i>
+        </div>
+
+
     </div>
 
     <!-- mi footer -->
-    <div class="footer item"> 
-        footer 
-    </div>
+    <div class="footer item">footer</div>
+
+
+
+
+    <script>
+
+        // 1. Seleccionar el div del HTML para modificarlo 
+        const mainDiv = document.querySelector ('.main');
+
+
+        const numero = 25
+
+        //2. Crear un HTMl
+        const filaHTML = `
+                <div class="content-row">
+                     <div class="content-2 item">Contenido 2</div>
+                    <div class="content-3 item">Contenido ${numero} <div>
+                </div>
+            `;
+        
+
+        // 3. Agregar la caja "filaHTML" dentro de main 
+        mainDiv.innerHTML += filaHTML;   
+        mainDiv.innerHTML += filaHTML;  
+        mainDiv.innerHTML += filaHTML;
+
+
+    </script>
+
+
+
 
 </body>
 </html>
