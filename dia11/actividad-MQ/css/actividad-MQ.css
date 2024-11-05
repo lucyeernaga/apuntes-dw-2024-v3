@@ -1,12 +1,97 @@
-body {
-    color: black;
-    background-color: rgb(150, 238, 147);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@media screen and (min-width: 650px;) and (max-width: 1024px)  {
-    body {
-        background-color: lightblue; 
+body {
+    color: black;
+    background-color:rgb(150, 238, 147);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title-mobile {
+    display: block;
+}
+
+
+.title-tablet {
+    display: none;
+}
+
+.title-desktop {
+    display: none;
+}
+
+
+ 
+/* Media Query para mobile */
+@media screen and (max-width: 650px) {
+    .container {
+        background-color: rgb(150, 238, 147);
     }
 
+    .container h1 {
+
+    }
+
+    .title-mobile {
+        display: flex;
+    }
+
+    .title-tablet,
+    .title-desktop {
+        display: none;
+    }
+    
+}
+
+
+
+
+
+/* Media Query para tablet */
+@media screen and (max-width: 650px) and (max-width: 1024px){
+    .container {
+        background-color: lightcyan;
+    }
+
+    .title-mobile,
+    .title-desktop {
+        display: none;
+    }
+
+    .title-tablet {
+        display: flex;
+    }
+}
+
+
+
+
+
+/* Media Query para desktop */
+@media screen and (min-width: 1024px) {
+    .container {
+        background-color: lightcoral;
+        flex-direction: column-reverse;
+    }
+
+    .title-mobile,
+    .title-tablet {
+        display: none;
+    }
+
+    .title-desktop {
+        display: flex;
+    }
     
 }

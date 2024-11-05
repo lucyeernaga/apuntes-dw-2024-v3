@@ -20,12 +20,16 @@
         </div>
 
         <picture>
-            <!-- tablet -->
-            <source media="" srcset="./img/foto.perrito2.jpg">
-            <!-- desktop -->
-            <source media="" srcset="./img/foto.perrito3.jpg">
+            <!-- la foto del perrito1 empieza por defecto -->
+
+            <!-- tablet (cuando la pantalla tiene como min 650px me carga la foto del perrito2 ) -->
+            <source media=" (min-width:650px) and (max-width:1024px)" srcset="./img/foto-perrito2.jpg"> 
+
+            <!-- desktop (cuando sigo creciendo la pantalla y tengo al menos 1024px deberia mostrasrme la del perrito3)-->
+            <source media="(min-width:1024px)" srcset="./img/foto.perrito3.jpg">
+
             <!-- imagen principal (mobile first)-->
-            <img src="./img/foto.perrito1.jpg" alt="foto perrito 1">
+            <img src="./img/foto.perrito1.jpg" alt="foto perrito 1" width="px">
         </picture>
     </div>
 
