@@ -22,6 +22,7 @@ una MQ se compone de multiples partes:
 - un bloque de CSS        
 
 
+
 ```css
 /* // @media screen and (breakpoint) { } */
 body {
@@ -60,10 +61,15 @@ body {
         background-color: lightblue; 
     }
 }
-´´´ 
+```
 
 
-## Media 
+
+
+
+
+
+ ## Media 
 - all: todos los dispositivos
 - print: vista previa de impresión
 - screen: pantallas a color (tablets, moviles, ordenadores)
@@ -73,12 +79,71 @@ body {
 
 ```css
 /*cualquier cosa que tenga la clase no-print, se le pone un display: none;Así cuando imprimamos si algo tiene la clase no-print, no se va a imprimir en esa pantalla*/
+.no-imprimir {
+    display: block; 
+}
 @media print {
     .no-imprimir {
         display: none;
     }
 }
+```
 
 
 
+
+
+
+## Tips para utilizarlo
+
+- Sobreescriben las reglas CSS normales, pero NO poseen mayor especificidad por lo tanto los MQ deben ir al final de nuestro CSS.
+- Deben utilizar el mismo selector y propiedades para que reemplace las reglas que deseamos. 
+- Pensar de antemano los breakpoints. 
+- Podemos usar una @media para cada selector o una sola para todos los selectores (recomendada)
+- Intentar desarrollar siempre para el movil (mobile first)
+
+
+
+
+```css
+/* Moviles*/  /*No hizo falta hacer un MQ para moviles pq ya cualquier cosa que sea menos de 1024 o que sobrepase los 2048 van a ser pantallas grandes*/
+.box { }
+.p {}
+
+
+/*pantalla mediana*/     
+@media screen and (min-width: 1024px) {
+    .box { }
+    .p { }
+}
+/*pantalla grande*/
+@media screen and (min-width: 2048px) {
+    .box { }
+    .p { }
+}
+```
+
+
+## Mobile vs Tablets vs Desktop
+Tamaño estandar de cada uno:
+- Mobile (55% uso): 320px - 480px
+- Tablets (2% uso): 768px - 1024px
+- Desktop (43% uso): 1024px - 1920px
+
+Tamaños actualizados 2024: 
+- Mobile (55% uso): 1440px - 3200px
+- Tablets (2% uso): 2560px - 1600px
+- Desktop (43% uso): 5120px - 2880px
+
+
+
+## Uso recomendado de MQ en Imagenes: 
+
+```HTML
+    <picture>
+        <source media="(min-width: 1024px)" srcset="./foto-desktop.png">
+        <source media="(min-width: 650px)" srcset="./foto-tablet.png">
+        <img src="./foto-moobile.png" alt="Mi foto">
+    </picture>
+```
 

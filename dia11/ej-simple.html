@@ -5,8 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
-        body {
+    <!-- CSS copartido para todos los MQ -->
+    <link rel="stylesheet" href="./css/ej-simple.css">
+
+
+    <!-- mi resolucion es de 2046px (ordenador)-->
+    <!-- <link rel="stylesheet" media="(min-width: 1024px)" href="./css/desktop.css"> -->
+    <!-- <link rel="stylesheet" media="(min-width: 768px)" href="./css/mobile.css"> -->
+
+
+
+    <!-- <style>
+        /* body {
             background-color: lightgreen;
             color: red;
         }
@@ -16,13 +26,38 @@
             body {
                 background-color: lightblue; 
             }
+        } */
+    </style>
+
+    <style>
+        body {
+            background-color: lightgreen;
+            color: red;
         }
     </style>
+
+
+    <style media="screen and (min-width: 600px;)">
+        body {
+            background-color: lightblue;
+        }
+    </style> -->
 </head>
 <body>
 
     <h1>soy un texto</h1>
     <p>soy un parrafo</p>
+
+
+    <!-- <img src="./foto-moobile.png" alt="Mi foto">
+    <img src="./foto-desktop.png" alt="Mi foto">
+    <img src="./foto-tablet.png" alt="Mi foto"> -->
+
+    <picture>
+        <source media="(min-width: 1024px)" srcset="./foto-desktop.png">
+        <source media="(min-width: 650px)" srcset="./foto-tablet.png">
+        <img src="./foto-moobile.png" alt="Mi foto">
+    </picture>
     
 </body>
 </html>
