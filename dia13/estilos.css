@@ -1,0 +1,61 @@
+/* Ejemplo 1 */
+/*(1 0 0)*/
+#myelement {
+    color:yellow
+}
+/*(1 1 0)*/
+#myelement .myBox {
+    color: green
+}
+
+
+
+
+
+/* Ejemplo 2 */
+/*(1 0 0)*/
+#myElement {
+    color: green;
+}
+/* (0 4 0) */
+.bodyClass .sectionClass .parentClass [id="myElement"] {
+    color: yellow;
+}
+
+
+
+
+/* Ejemplo 3 */
+/*(0 1 1)*/
+:root input {
+    color: green;
+}
+/*(0 0 4)*/
+html body main input {
+    color: yellow;
+}
+
+
+
+
+/* Ejemplo 4 */
+/*(0 1 1)*/
+input.myClass {
+    color: yellow;
+}
+/*(0 1 1)*/
+:root input {
+    color: green;
+}
+/*(0 1 1)*/
+input [type="checkbox"] {
+    color: orange;
+}
+
+
+
+
+
+
+
+
