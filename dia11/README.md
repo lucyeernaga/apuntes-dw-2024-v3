@@ -143,7 +143,7 @@ Tamaños actualizados 2024:
     <picture>
         <source media="(min-width: 1024px)" srcset="./foto-desktop.png">
         <source media="(min-width: 650px)" srcset="./foto-tablet.png">
-        <img src="./foto-moobile.png" alt="Mi foto">
+        <img src="./foto-mobile.png" alt="Mi foto">
     </picture>
 ```
 
