@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+
+    <!-- JUEGO GRID https://cssgridgarden.com/#es -->
+
+    <style>
+        /* Reglas específicas para Grid */
+        /* Grid de 2f x 6c */
+        .gridContainer {
+            display: grid;
+            grid-template-rows: 100px 100px 50px; /* (aqui se define cuantas lineas tenemos) */
+            grid-template-columns: 100px 100px 100px 100px 100px 100px;
+            gap: 10px;
+        }
+
+        /* Seleccionar item con item-1 */
+        .item.item-1 {
+            background-color: green;
+            grid-row-start: 1;
+            grid-row-end: 3; /* para que use fila 1 y 2 solo*/
+
+            grid-column-start: 1;
+            grid-column-end: 6;
+        }
+
+        .item.item-2 {
+            z-index: 1;
+            background-color: red;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 4;
+            grid-column-end: 6;
+        }
+
+        .item.item-3 {
+            background-color: burlywood;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: 1;
+            grid-column-end: 7;
+        }
+
+
+
+
+
+
+
+
+        /* Reglas de css normales */
+        .gridContainer {
+            width: 90vw;
+            border: 5px solid black;
+            height: 500px;
+        }
+
+        .item { 
+            border: 2px solid blue;
+            background-color: lightblue;
+            opacity: 0.5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="gridContainer">
+        <div class="item item-1">1</div>
+        <div class="item item-2">2</div>
+        <div class="item item-3">3</div>
+    </div>
+    
+</body>
+</html>
