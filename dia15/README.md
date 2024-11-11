@@ -9,7 +9,25 @@ Es una unidad relativa al tamaño del elemento padre. Por ejemplo, si un element
 Son útiles para crear diseños fluidos y responsive que se adapten a distintos tamaños de pantalla. 
 
 ## EM
+se usa el ancho de la m como medida para elegir una tipografia especifica, su ancho.
 
+normalmente el tamaño de em es de 16px (por defecto)
+La unidad es relativa al tamaño de la fuente del elemento padre. Por ejemplo si el padre tiene un font-size: 10px, y un margin: 3em, el margin será de 30px. 
+Esta unidad es útil para crear tamaños de textp y margenes que escalen con el tamaño de la fuente. 
+
+esto mejora la accesibilidad y flexibilidad del diseño. es ideal para escalar elementos proporcionalmente al texto. 
+
+```css
+    .card {
+        font-size: 16px;/*16px*/
+        padding: 2em; /*24px*/
+    }
+
+    .card__title {
+        font-size: 2em; /*32px*/
+        margin: 2.5em; /*40px*/
+    }
+```
 
 
 
