@@ -82,7 +82,7 @@ Ejemplos de uso:
 
 
 ## Figura
-Define elemtnos autocontenidos, como una imagen, un diagrana o grafico, una tabla, una fotografia...
+Define elementos autocontenidos, como una imagen, un diagrana o grafico, una tabla, una fotografia...
 Dentro de ella se suele utilizar "figcaption" para describir este contenido.
 
 
