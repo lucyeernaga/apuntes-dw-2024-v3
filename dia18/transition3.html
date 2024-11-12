@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transitions - JavaScript</title>
+
+
+    <style>
+        .acordeon {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .acordeon__content {
+            max-height: 0;
+            overflow: hidden;
+            border: 1px solid blue;
+            transition: max-height 0.5s ease;
+        }
+
+        /*la clase open indica que esta abierto */
+        .acordeon__item.open .acordeon__content {
+            max-height: 300px;
+        }
+
+
+        body {
+            background-color: #fff;
+            color: #000;
+            transition: color 2s ease-in, background-color 2s ease-in;
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+
+</head>
+<body class="dark-mode">
+    <h2>Acordeón</h2>
+
+    <div class="acordeon">
+        <div class="acordeon__item">
+            <h3>Pregunta 1</h3>
+            <div class="acordeon__content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel atque, soluta omnis ab unde tenetur assumenda animi, nulla tempore pariatur dolores reiciendis natus ipsam recusandae consectetur nemo, iure officiis?</p>
+            </div>
+        </div>
+
+        <div class="acordeon__item">
+            <h3>Pregunta 2</h3>
+            <div class="acordeon__content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel atque, soluta omnis ab unde tenetur assumenda animi, nulla tempore pariatur dolores reiciendis natus ipsam recusandae consectetur nemo, iure officiis?</p>
+            </div>
+        </div>
+
+        <div class="acordeon__item">
+            <h3>Pregunta 3</h3>
+            <div class="acordeon__content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel atque, soluta omnis ab unde tenetur assumenda animi, nulla tempore pariatur dolores reiciendis natus ipsam recusandae consectetur nemo, iure officiis?</p>
+            </div>
+        </div>
+
+        <div class="acordeon__item">
+            <h3>Pregunta 4</h3>
+            <div class="acordeon__content">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel atque, soluta omnis ab unde tenetur assumenda animi, nulla tempore pariatur dolores reiciendis natus ipsam recusandae consectetur nemo, iure officiis?</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        //Código JS para acordeon
+
+        // seleccionar todos los items con la clase "acordeon__item"
+        const lista_items = document.querySelectorAll('acordeon_item'); 
+
+        // Recorrer cada item de la lista
+        lista_items.foreach(item=> {
+
+            // asignar un evento de click a cada item
+            item.addEventListener ('click', () => {
+
+                //quitar la clase "open" a todos mis acordeon__item
+                lista_items.forEach (item=> item.classList.remove ('open')); 
+
+                //agregar la clase "open" al acordeon__item que le hice click
+                item.classList.add('open'); 
+
+
+            })
+        })
+    </script>
+
+    
+</body>
+</html>
