@@ -25,6 +25,11 @@
         }
 
 
+
+
+
+
+        /* Reglas de CSS para Modo Oscuro */
         body {
             background-color: #fff;
             color: #000;
@@ -39,21 +44,25 @@
 
 
 
+         
         /* Transición para Notificación */
         .notificacion {
             opacity: 0;
             transform: translateY(-20px);
+            transition: transform 0.4s ease-in, opacity 0.4s ease-in;
         }
 
         .notificacion.show {
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 
 </head>
-<body class="dark-mode">
+
+
+<body>
+
     <h2>Acordeón</h2>
 
     <div class="acordeon">
@@ -63,21 +72,18 @@
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel atque, soluta omnis ab unde tenetur assumenda animi, nulla tempore pariatur dolores reiciendis natus ipsam recusandae consectetur nemo, iure officiis?</p>
             </div>
         </div>
-
         <div class="acordeon__item">
             <h3>Pregunta 2</h3>
             <div class="acordeon__content">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel atque, soluta omnis ab unde tenetur assumenda animi, nulla tempore pariatur dolores reiciendis natus ipsam recusandae consectetur nemo, iure officiis?</p>
             </div>
         </div>
-
         <div class="acordeon__item">
             <h3>Pregunta 3</h3>
             <div class="acordeon__content">
                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Debitis vel atque, soluta omnis ab unde tenetur assumenda animi, nulla tempore pariatur dolores reiciendis natus ipsam recusandae consectetur nemo, iure officiis?</p>
             </div>
         </div>
-
         <div class="acordeon__item">
             <h3>Pregunta 4</h3>
             <div class="acordeon__content">
@@ -86,14 +92,24 @@
         </div>
     </div>
 
+
+
+
+
     <h2>Modo Oscuro</h2>
     <button id="btn-dark">Prender / Apagar la Luz</button>
+
+
     <button id="btn-dark">Prender / Apagar la Luz</button>
 
     <h2>Notificaciones</h2>
-   <div class="notificacion">
+    <div class="notificacion">Hola soy una notificacion!</div>
+    <button id="btn-noti">Mostrar notificacion</button>
 
-   </div>
+    </div>
+
+
+
 
     <script>
 
@@ -101,22 +117,58 @@
 
         // seleccionar todos los items con la clase "acordeon__item"
         const lista_items = document.querySelectorAll('acordeon_item'); 
-
         // Recorrer cada item de la lista
         lista_items.foreach(item=> {
-
             // asignar un evento de click a cada item
             item.addEventListener ('click', () => {
-
                 //quitar la clase "open" a todos mis acordeon__item
                 lista_items.forEach (item=> item.classList.remove ('open')); 
-
                 //agregar la clase "open" al acordeon__item que le hice click
                 item.classList.add('open'); 
+            });
+        });
 
 
-            })
-        })
+
+
+        // Código de JS para agregar o quitar clases
+        function cambiarClases(buttonSelector, targetSelector, nombreDeClase) {
+            // seleccionamos todos los botones
+            const lista_botones = document.querySelectorAll(buttonSelector);
+
+
+            // seleccionamos todos los destinos
+            const targets = document.querySelectorAll(targetSelector);
+
+            // recorremos nuetsra lista de botones 
+            lista_botones.forEach(button => {
+
+                // a cada boton escucho si le hicieron click
+                button.addEventListener('click', () => {
+                    
+                    // a cada target lo recorremos y...
+                    targets.forEach(target => {
+
+
+                        // le agregamos o quitamos la clase segun corresp.
+                        target.classList.toggle(nombreDeClase);
+                    });
+                });
+            });
+        }
+
+
+
+
+        cambiarClases("#btn-dark", "body", ".dark-mode");
+        // 1: a que boton le tengo que hacer click 
+        // 2: a quien va a afectar 
+        // 3: que clase le va a agregar
+
+
+
+        cambiarClases("#btn-noti", ".notificacion", "show");
+
     </script>
 
     
