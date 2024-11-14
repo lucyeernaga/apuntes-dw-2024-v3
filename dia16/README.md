@@ -134,7 +134,7 @@ Podemos usar la regla `grid-auto-rows: 100px;` para definir el tamño de nuevas 
 Tambien extiste el `grid-auto-flow` que nos permie definir si las nuevas celdas serán filas o columnas. 
 
 ```css
-/* sistema de 3x3 */
+/* sistema de 3 x 3 */
 .container {
     display: grid; 
     grid-template-rows: 100px ;
@@ -143,6 +143,28 @@ Tambien extiste el `grid-auto-flow` que nos permie definir si las nuevas celdas 
 
     /* grid-auto-rows: 100px; */
     grid-auto-flow: column;
-    grid-auto-colums: 100px;
+    grid-auto-columns: 100px;
 }
 ```
+
+
+E grid poseemos una nueva medida llamada fracción "fr". 
+
+```css
+/* sistema de 3 x 3 */
+.container {
+    display: grid; 
+    grid-template-columns: 1fr  2fr  1fr; /* 25% 50% 25%*/
+
+    grid-template-columns: 200px 1fr; /* 200px 1fr (200px a la 1a columna y 1fr a la segunda columna para que ocupe el espacio que quiera) */
+
+    grid-template-columns: 200px  1fr  1fr; /* 3 columnas: 200px 50% 50% (se divide la */
+    /*  dividimos en fracciones en base al total de elementos que tengamos */
+}
+```
+
+
+- minmax
+- repeat
+- templates-areas
+- auto-fit
