@@ -51,7 +51,7 @@ div {
 ## Timing Functions
 
 - `ease`: velocidad lenta - rápida - lenta (x defecto)
-- `linar`: constante
+- `linear`: constante
 - `ease-in`: lento - rápido
 - `ease-out`: rápido - lento
 - `ease-in-out`: lento - rápid - lento (más brusca)
@@ -72,3 +72,7 @@ div {
     transition-timing-function: cubic-bezier;
 }
 ```
+
+
+
+<!-- .box1 (es el formato original) .box1:hover (son las prop. modificadas)  -->
