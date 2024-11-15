@@ -148,7 +148,7 @@ Tambien extiste el `grid-auto-flow` que nos permie definir si las nuevas celdas 
 ```
 
 
-E grid poseemos una nueva medida llamada fracción "fr". 
+En grid poseemos una nueva medida llamada fracción "fr". 
 
 ```css
 /* sistema de 3 x 3 */
