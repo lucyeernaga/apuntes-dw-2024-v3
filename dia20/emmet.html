@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet en VSC</title>
+</head>
+<body>
+    Nos permite escribir HTML y CSS de form rápida y eficiente 
+
+    <a href="https://docs.emmet.io/cheat-sheet/" target="_blank">Cheat Sheet</a>
+
+    <!-- Emmet: 
+    >             Nos metemos dentro de la caja (crear hijo)
+    .             agregamos una o mas clases
+    #             agregamos un id
+    +             agregamos un sibbling/hermano
+    *             repetidor/cantidad
+    {}            contenido/texto
+    $             dentro del contenido, podemos numerar elementos
+    lorem10       texto lorem ipsum de 10
+    ()            agregar elementos
+                
+    
+    main.contenido.modo-oscuro#contenido  >   (h1.titulo.textp>lorem10)  + (ul>li*5 {Item de Lista $} )  + footer.
+    -->
+
+    <main class="contenido modo-oscuro" id="contenido">
+        <h1 class="titulo">Emmet</h1>
+        <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, repellendus!</p>
+        <ul>
+            <li>Item de Lista 1</li>
+            <li>Item de Lista 2</li>
+            <li>Item de Lista 3</li>
+            <li>Item de Lista 4</li>
+            <li>Item de Lista 5</li>
+        </ul>
+
+    </main>
+</body>
+</html>
