@@ -44,10 +44,8 @@
 
 
 
-
     <sidebar class="sidebar">
-        <hh3 class="sidebar__p">Acordeon</h3>
-            
+        <p class="sidebar__p">Soy un sidebar</p>
     </sidebar>
 
 
@@ -75,8 +73,8 @@
 
 
         // Seleccionamos el botón y el body
-        const btn = document.getElementById('btn-claro-oscuro');
-        const body = document.body;
+        const btn = document.querySelector('#btn-claro-oscuro');
+        const body = document.querySelector("body");
 
         // Función para cambiar entre modo claro y oscuro
         btn.addEventListener("click", () => {
