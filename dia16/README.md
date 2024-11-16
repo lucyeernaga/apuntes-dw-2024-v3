@@ -164,7 +164,49 @@ En grid poseemos una nueva medida llamada fracción "fr".
 ```
 
 
-- minmax
-- repeat
-- templates-areas
-- auto-fit
+
+
+## Grid Templates Areas
+
+Podemos nombrar celdas utilizando `grid-template-areas`
+
+```css
+.container {
+    display: flex; 
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas x 1 fraccion*/
+    grid-template-rows: repeat(4, 100px)
+    grid-gap: 10px; 
+
+
+    grid-template-areas: 
+            "sector1 sector1 sector2"
+            "sector3 sector3 sector2"
+            "sector4 sector5 sector5"
+            "sector4 sector5 sector5";
+}
+
+
+.caja-1 {
+    grid-area: sector1;
+}
+
+.caja-2 {
+    grid-area: sector2;
+}
+
+.caja-3 {
+    grid-area: sector3;
+}
+
+.caja-4 {
+    grid-area: sector4;
+}
+
+.caja-5 {
+    grid-area: sector5;
+}
+```
+
+
+
+<!-- siempre que se trabaje con grid, se trabaja con líneas y cuadrados -->
