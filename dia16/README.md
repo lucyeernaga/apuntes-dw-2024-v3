@@ -13,7 +13,7 @@ Usamos `display:grid` para grear un grid y se usa `grid-template-columns` para d
 /* es una tabla de 3x3 */
 .container {
     display: grid; 
-    grid-template-rows: 100px 100px 50px 
+    grid-template-rows: 100px 100px 50px ;
     grid-template-columns: 100px 100px 100px 
 }
 ```
@@ -117,7 +117,7 @@ Podemos usar `grid-gap`(alias `gap`) para definir un espacio entre filas y colum
 
 
 Si agregamos + bloques dentro de nuestro grid que cantidad de filas y columnas, grid creará automáticamente una nueva fila. Esto se llama "grid-implicita".
-Podemos usar la regla `grid-auto-rows: 100px;` para definir el tamño de nuevas celdas.
+Podemos usar la regla `grid-auto-rows: 100px;` para definir el tamaño de nuevas celdas.
 
 ```css
 .container {
