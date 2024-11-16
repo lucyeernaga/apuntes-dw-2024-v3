@@ -38,6 +38,12 @@ main {
     grid-area: main;
 }
 
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .sidebar {
     grid-area: sidebar;
     display: flex;
