@@ -9,25 +9,40 @@ body {
     grid-template-columns: repeat(3, 1fr); 
     grid-template-rows: repeat(3, 100px);
      grid-template-areas: 
-            "sector1 sector1 sector1";
+            "sector1 sector1 sector1"
+            "sector2 sector2 sector3"
+            "sector4 sector4 sector4";
 }
 
 header {
     grid-area: sector1;
-    height: 100px;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(164, 163, 161);
+    background-color: lightgray;
+    padding: 10px;
 }
 
-h2 {
-    margin-left: 20px;
-}
 
 .header__button {
     background-color: white;
     border: 2px solid black;
     margin: 20px;
+}
+
+main {
+    grid-area: sector2;
+    min-height: 100vh;
+}
+
+.sidebar {
+    grid-area: sector3;
+    padding: 10px;
+}
+
+footer {
+    grid-area: sector4;
+    width: 100%;
+    height: 100px;
+    padding: 10px;
 }
