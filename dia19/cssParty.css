@@ -34,6 +34,11 @@ header {
     margin: 20px;
 }
 
+.dark-mode {
+    background-color: #121212; /* Fondo oscuro */
+    color: white; /* Texto claro */
+}
+
 main {
     grid-area: main;
 }
@@ -42,6 +47,48 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.hero__img {
+    filter: drop-shadow(10px 10px 6px rgba(0, 0, 0, 0.5));
+    padding: 15px;
+}
+
+.container {
+    background-color: #8f9d8a;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+
+.container__caja {
+    background-color: #f1e0c5;
+    padding: 25px 10px 10px 10px;
+    align-items: center;
+    transition: rotate 1s ease;
+}
+
+.container__caja:hover {
+    rotate: 90deg;
+}
+
+.galeria {
+    display: grid;
+    grid-template-areas: 
+        "galeria__img1 galeria__img2 galeria__img3"
+        "galeria__img4 galeria__img5 galeria__img6"
+        "galeria__img7 galeria__img8 galeria__img9";
+    gap: 10px;
+}
+
+.galeria__img1, .galeria__img2, .galeria__img3, .galeria__img4, .galeria__img5,
+.galeria__img6, .galeria__img7, .galeria__img8 {
+    transition: rotate 1s ease, filter 0.5s ease;
+}
+
+.galeria__img1:hover, .galeria__img2:hover, .galeria__img3:hover, .galeria__img4:hover, .galeria__img5:hover, .galeria__img6:hover, .galeria__img7:hover, .galeria__img8:hover {
+    rotate: 70deg;
+    filter: drop-shadow(10px 10px 6px rgba(0, 0, 0, 0.5));
 }
 
 .sidebar {
@@ -56,4 +103,5 @@ footer {
     height: 100px;
     padding: 10px;
     background-color:#c9b79c ;
+    position: sticky;
 }

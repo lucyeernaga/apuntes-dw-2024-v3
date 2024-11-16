@@ -12,7 +12,7 @@
 
     <header>
         <p>Soy un header</p>
-        <button class="header__button">Modo Oscuro / Claro</button>
+        <button class="header__button" id="btn-claro-oscuro">Modo Oscuro / Claro</button>
     </header>
 
 
@@ -31,7 +31,14 @@
         </section>
 
         <section class="galeria">
-
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img1">
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img2">
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img3">
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img4">
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img5">
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img6">
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img7">
+            <img src="./imgs/Garabatos Aleatorios.jpg" alt="" class="galeria__img8">
         </section>
     </main>
 
@@ -39,7 +46,8 @@
 
 
     <sidebar class="sidebar">
-        <p class="sidebar__p">Soy un sidebar</p>
+        <hh3 class="sidebar__p">Acordeon</h3>
+            
     </sidebar>
 
 
@@ -47,5 +55,34 @@
     <footer>
         <p>Soy un footer</p>
     </footer>
+
+
+    <script>
+        // agarramos la clase .container__caja
+        const caja = document.querySelector('.container__caja');
+        
+        // Agregamos el evento click al elemento
+        caja.addEventListener('click', function() {
+            // Cambiamos el texto dentro de la caja
+            const p = caja.querySelector('p');
+            p.textContent = 'Me han activado!';
+
+            // Añadimos la clase isActivated para cambiar el estilo
+            caja.classList.add('isActivated');
+        });
+
+
+
+
+        // Seleccionamos el botón y el body
+        const btn = document.getElementById('btn-claro-oscuro');
+        const body = document.body;
+
+        // Función para cambiar entre modo claro y oscuro
+        btn.addEventListener("click", () => {
+            // Alternamos la clase 'dark-mode' en el body
+            body.classList.toggle('dark-mode');
+        });
+    </script>
 </body>
 </html>
