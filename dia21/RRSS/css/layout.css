@@ -1,0 +1,19 @@
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face
+Los formatos posibles son: ttf: truetype, otf: opentype, woff: woff, woff2: woff2 */
+
+
+@font-face {
+    font-family: "Mi super fuente"; /* Nombre de fuente personalizado por mi*/
+    src: url(../fonts/Crotahfreeversion-Italic.ttf) format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.u-txtCrotah {
+    font-family: "Crotah";
+}
