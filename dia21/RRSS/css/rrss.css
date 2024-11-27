@@ -1,0 +1,29 @@
+/* ----------------------------------------- */
+/*                 variables                 */
+/* ----------------------------------------- */
+:root {
+    --fb-color: #4267b2;
+    --x-color: #000;
+    /* --tweet-color: #1DA1F2; */
+    --insta-color: #E1306C;
+    --lkdin-color: #286782;
+    --yt-color: #F00;
+    --lion-color: #D89601; /* inventado*/
+}
+
+
+
+
+.Icons {
+    display: flex;
+    gap: 2px;
+    flex-wrap: wrap;
+}
+
+
+
+
+/* ----------------------------------------- */
+/*             Colores de Iconos             */
+/* ----------------------------------------- */
+.IconBox--fb .IconBox--span

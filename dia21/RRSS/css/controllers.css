@@ -57,6 +57,20 @@
 
 
 
+/* Modo row / col */
+.u-flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.u-flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
 /* ----------------------------------------- */
 /*                controller                 */
 /* ----------------------------------------- */
