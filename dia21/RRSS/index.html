@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,28 +9,34 @@
     <!--  Importar fuentes  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <!--  Importar iconos   -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!--  Nuestros estilos  -->
-      <link rel="stylesheet" href="./css/layout.css">
-      <link rel="stylesheet" href="./css/rrss.css">
-      <link rel="stylesheet" href="./css/controllers.css">
-      
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/rrss.css">
+    <link rel="stylesheet" href="./css/controllers.css">
+
 </head>
+
 <body class="Body u-bgPrimary">
     <header class="Header u-bgPrimary u-boxShadow">
         <h1 class="u-txtCrotah u-txtPrimary">RRSS</h1>
     </header>
-    
+
     <main class="Main u-bgSecondary">
         <article class="Icons">
 
-            <div class="IconBox u-bgPrimary IconBox--fb">
+            <div class="IconBox no_u-bgPrimary IconBox--fb">
                 <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -45,7 +52,7 @@
             </div>
 
 
-            <div class="IconBox u-bgPrimary IconBox--x">
+            <div class="IconBox no_u-bgPrimary IconBox--x">
                 <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -61,7 +68,7 @@
             </div>
 
 
-            <div class="IconBox u-bgPrimary IconBox--insta">
+            <div class="IconBox no_u-bgPrimary IconBox--insta">
                 <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -77,7 +84,7 @@
             </div>
 
 
-            <div class="IconBox u-bgPrimary IconBox--lkdin">
+            <div class="IconBox no_u-bgPrimary IconBox--lkdin">
                 <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -93,7 +100,7 @@
             </div>
 
 
-            <div class="IconBox u-bgPrimary IconBox--yt">
+            <div class="IconBox no_u-bgPrimary IconBox--yt">
                 <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -109,7 +116,7 @@
             </div>
 
 
-            <div class="IconBox u-bgPrimary IconBox--lion">
+            <div class="IconBox no_u-bgPrimary IconBox--lion">
                 <a href="" class="IconBox-Link">
                     <div class="IconBox-layers">
                         <span class="IconBox-span"></span>
@@ -129,8 +136,8 @@
 
 
     <div class="controllers">
-        <button class="Btn">Columna</button>
-        <button class="Btn Btn--icon">
+        <button id="btnDireccion" class="Btn">Columna</button>
+        <button id="btnDarkLight" class="Btn Btn--icon">
 
             <span class="material-symbols-outlined">
                 dark_mode
@@ -139,7 +146,77 @@
         </button>
     </div>
 
+    <script>
 
+        //--------------------------------------
+        //       Declaramos las variables 
+        //--------------------------------------
+
+        // seleccionar elementos
+        const btnDirection = document.querySelector("#btnDireccion");
+        const btnDarkLight = document.querySelector("#btnDarkLight");
+        const iconsContainer = document.querySelector(".Icons");
+
+        // const miBody = document.querySelector( ".Body");
+
+
+        // console log es para visualizar solamente en inspeccionar 
+        console.log(iconsContainer);
+        console.log("HOLA");
+
+
+
+
+
+
+        //--------------------------------------
+        //      Declaramos las funciones  
+        //--------------------------------------
+
+
+        btnDirection.addEventListener("click", () => {
+
+            // agregar o quitar la clase u-flexCol
+            iconsContainer.classList.toggle("u-flexCol");
+
+            // cambiar el texto del boton
+            if (iconsContainer.classList.contains("u-flexCol")) {
+
+                // si se cumple la condición hace lo que está aqui dentro
+                // console.log("icons SII tiene u-flexCol");
+                btnDirection.textContent = "Fila";
+
+
+            } else {
+
+                // en caso contrario... hace lo de aquí abajo
+                // console.log("icons NOOO tiene u-flexCol"); 
+                btnDirection.textContent = "Columna";
+
+            }
+        });
+
+
+        btnDarkLight.addEventListener("click", () => {
+
+            // agregar o quitar la clase u-Dark
+            document.body.classList.toggle("u-Dark");
+
+            // cambiar el texto del boton
+            if (document.body.classList.contains("u-Dark")) {
+                btnDarkLight.textContent = "Light_mode";
+                // Otra opción para hacer lo mismo sería: btnDarkLight.querySelector("span").innerText = "light_mode"
+            } else {
+                btnDarkLight.textContent = "Dark_mode";
+                // Otra opción para hacer lo mismo sería: btnDarkLight.querySelector("span").innerText = "dark_mode"
+                // Otra opción para hacer lo mismo sería: btnDarkLight.innerHTML='<span class="material-symbols-outlined">dark_mode</span>';
+            }
+        });
+
+
+
+    </script>
 
 </body>
+
 </html>

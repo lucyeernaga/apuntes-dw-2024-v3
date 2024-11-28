@@ -3,8 +3,8 @@ Los formatos posibles son: ttf: truetype, otf: opentype, woff: woff, woff2: woff
 
 
 @font-face {
-    font-family: "Mi super fuente"; /* Nombre de fuente personalizado por mi*/
-    src: url("../fonts/Crotahfreeversion-Italic.ttf") format('truetype');
+    font-family:"Crotah" ;
+    src: url("../fonts/Crotahfreeversion-Italic.ttf") format("truetype");
 }
 
 * {
