@@ -20,10 +20,183 @@
     flex-wrap: wrap;
 }
 
+.IconBox-Link {
+    text-decoration: none; 
+    margin: 0 25px; /* para que haya espacio entre las cajas de los iconos*/
+    display: block; /* Para que se creen las cajas (pero no entiendo muy bien como funciona el display block)*/
+
+    position: relative;
+}
+
+
+.IconBox-layers {
+    width: 55px;
+    height: 55px;
+}
+
+.IconBox:hover .IconBox-layers {
+    transform: rotate(-35deg) skew(20deg); /* skew para deformar la caja */
+    /* todo esto es para hacer que al pasar el mouse por las cajas rectas, se deformen y roten */
+}
+
+.IconBox-span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #fff; /* para crear el borde de las cajas*/
+    border-radius: 5px;
+    width: 100%; /* el width y height para que la caja tenga dentro el texto y el icono*/
+    height: 100%;
+
+    font-size: 30px; /* par el tamaño de los iconos*/
+    text-align: center; /* para centrar el icono y el texto*/
+    line-height: 55px;
+}
+
+
+
+
+
+/* ----------------------------------------- */
+/*              Layers de Iconos             */
+/* ----------------------------------------- */
+
+.IconBox:hover .IconBox-span:nth-child(1) {
+    /* el IconBox:hover nos dice que numero de capas queremos seleccionar*/
+    opacity: 0.2;
+}
+
+.IconBox:hover .IconBox-span:nth-child(2) {
+    opacity: 0.4;
+    transform: translate(5px, -5px); /* translate es para moverlo en el eje x y el eje y*/
+}
+
+.IconBox:hover .IconBox-span:nth-child(3) {
+    opacity: 0.6;
+    transform: translate(10px, -10px);
+}
+
+.IconBox:hover .IconBox-span:nth-child(4) {
+    opacity: 0.8;
+    transform: translate(15px, -15px);
+}
+
+.IconBox:hover .IconBox-span:nth-child(5) {
+    opacity: 1;
+    transform: translate(20px, -20px);
+}
+
+/* si para cada capa queremos moverla 5px para arriba y 5px para la derecha, hay que aumentar los px en translate*/
+
 
 
 
 /* ----------------------------------------- */
 /*             Colores de Iconos             */
 /* ----------------------------------------- */
-.IconBox--fb .IconBox--span
+
+.IconBox--fb .IconBox-span, 
+.IconBox--fb .IconBox-text {
+    color: var(--fb-color);
+    border-color: var(--fb-color);
+}
+
+.IconBox--x .IconBox-span, 
+.IconBox--x .IconBox-text {
+    color: var(--x-color);
+    border-color: var(--x-color);
+}
+
+.IconBox--insta .IconBox-span, 
+.IconBox--insta .IconBox-text {
+    color: var(--insta-color);
+    border-color: var(--insta-color);
+}
+
+.IconBox--lkdin .IconBox-span, 
+.IconBox--lkdin .IconBox-text {
+    color: var(--lkdin-color);
+    border-color: var(--lkdin-color);
+}
+
+.IconBox--yt .IconBox-span, 
+.IconBox--yt .IconBox-text {
+    color: var(--yt-color);
+    border-color: var(--yt-color);
+}
+
+.IconBox--lion .IconBox-span, 
+.IconBox--lion .IconBox-text {
+    color: var(--lion-color);
+    border-color: var(--lion-color);
+}
+
+
+
+/* Sombras de Capas */
+.IconBox--fb:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--fb-color);
+}
+
+.IconBox--x:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--x-color);
+}
+
+.IconBox--insta:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--insta-color);
+}
+
+.IconBox--lkdin:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--lkdin-color);
+}
+
+.IconBox--yt:hover .IconBox-span {
+    box-shadow: -1px 1px 3px var(--yt-color);
+}
+
+.IconBox--lion:hover .IconBox-span {
+    /* box-shadow: -1px 1px 3px var(--lion-color); Para que la sombra sea un poco más oscurita*/
+    box-shadow: -1px 1px 3px var(--yt-color);
+}
+
+/* .IconBox--lion:hover .IconBox-span:nth-child(even) {
+
+     usamos nth-child para elegir las capas pares/impares (es decir, a los elementos pares/impares les va a poner esa sombra) ALL (impar) o EVEN (par)
+
+    box-shadow: -1px 1px 3px var(--lion-color);
+} */
+
+
+
+
+
+
+.IconBox-text {
+    position: absolute; /* busca a su padre más cercano y se va a posicionar sonre ese lugar*/
+    left: 50%; /* para que se mueva de la izq 50%*/
+    font-weight: 500; 
+    bottom: -5px;
+    transform: translate(-50%); /*para que esté centrado*/
+    opacity: 0; /* desaparece el texto*/
+    transform: bottom 0.3 ease, opacity 0.3 ease;
+}
+
+.IconBox {
+    padding-bottom: 35px; /* para que la caja empiece más arriba (+ espacio debajo de la caja*/
+}
+
+.IconBox:hover .IconBox-text {
+    opacity: 1; /* para que aparezca*/
+    bottom: -35px; /* para que desde la parte de abajo esté a -35px, es decir, aparece 35px abajo*/
+}
+
+
+
+
+/* Fuente Personalizada */
+
+.IconBox--lion .IconBox-span, 
+.IconBox--lion .IconBox-text {
+    font-family: "Bungee Spice";
+    white-space: nowrap; /* Segun el tamaño de la caja puede ser que, si el texto es largo, se quiera ir a la linea de abajo y como no quiero eso pq es un icono, se le agrega white-space: nowrap (para que no agrege saltos de liena en espacios, es decir, que el texto continue siendo largo, no se vaya para abajo)*/
+}
