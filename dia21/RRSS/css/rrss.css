@@ -1,6 +1,7 @@
 /* ----------------------------------------- */
 /*                 variables                 */
 /* ----------------------------------------- */
+
 :root {
     --fb-color: #4267b2;
     --x-color: #000;
@@ -11,11 +12,26 @@
     --lion-color: #D89601; /* inventado*/
 }
 
-/* Fix para que el icono de X sea blanco en modo oscuro */
-.u-Dark {
-    --x-color: #fff;
+
+
+
+
+/* ---------------------------------------------*/
+/*              Modo Claro/Obscuro              */
+/* ---------------------------------------------*/
+
+.u-Dark{
+    --x-color:#fff;
 }
 
+
+
+
+
+
+/* ---------------------------------------------*/
+/*                 Elementos                    */
+/* ---------------------------------------------*/
 
 .Icons {
     display: flex;
@@ -31,10 +47,10 @@
     position: relative;
 }
 
-
 .IconBox-layers {
     width: 55px;
     height: 55px;
+    transition:transform 0.3s ease;
 }
 
 .IconBox:hover .IconBox-layers {
@@ -55,6 +71,8 @@
     text-align: center; /* para centrar el icono y el texto*/
     line-height: 55px;
 }
+
+
 
 
 
@@ -90,6 +108,10 @@
 }
 
 /* si para cada capa queremos moverla 5px para arriba y 5px para la derecha, hay que aumentar los px en translate*/
+
+
+
+
 
 
 
@@ -137,6 +159,7 @@
 
 
 /* Sombras de Capas */
+
 .IconBox--fb:hover .IconBox-span {
     box-shadow: -1px 1px 3px var(--fb-color);
 }
@@ -163,9 +186,7 @@
 }
 
 /* .IconBox--lion:hover .IconBox-span:nth-child(even) {
-
-     usamos nth-child para elegir las capas pares/impares (es decir, a los elementos pares/impares les va a poner esa sombra) ALL (impar) o EVEN (par)
-
+    usamos nth-child para elegir las capas pares/impares (es decir, a los elementos pares/impares les va a poner esa sombra) ALL (impar) o EVEN (par)
     box-shadow: -1px 1px 3px var(--lion-color);
 } */
 

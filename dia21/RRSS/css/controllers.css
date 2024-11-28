@@ -52,6 +52,7 @@
 
 .u-boxShadow {
     box-shadow: var(--box-shadow);
+    transform: box-shadow 0.3s ease;
 }
 
 
