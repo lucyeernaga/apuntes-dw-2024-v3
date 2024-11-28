@@ -112,12 +112,12 @@ PI=4; // devuelve error
 
 
 
-## Coemntarios en JS
+## Comentarios en JS
 
 - Simple `//`
 - Simple en la misma linea `nombre= "Luis Angel" // Soy comentario`
 - Bloque: `/* ...... */`
-- Coemntarios de documentación, este se usa para comentarios de funciones y clases. 
+- Comentario de documentación, este se usa para comentarios de funciones y clases. 
 
 ```js
 // soy simple
