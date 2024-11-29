@@ -7,15 +7,85 @@
 </head>
 <body>
     
+    <h1>Clicker en JS</h1>
+
+    <button id="btnSuma">Suma 1</button>
+    <button id="btnResta">Resta 1</button>
+
+    <button id="btnMulti">Multiplica por 5</button>
+
+    <h3>Cantidad de clicks</h3>
+    <div id="resultado">0000000000</div>
+
+    <script>
+
+        /* -------------------------------
+        1. Declaramos variables y obtenemos
+        nuestros tags del DOM
+        ---------------------------------*/
+        const btnSuma = document.querySelector("#btnSuma");
+        const btnResta = document.querySelector("#btnResta"); 
+        const btnMulti = document.querySelector("#btnMulti"); 
+        const txtResultado = document.querySelector("#resultado"); 
+
+
+        let resultado = 0; // estamos iniciando una variable con valor 0
+
+
+        /* -------------------------------
+        2. Crear funciones
+        ---------------------------------*/
+
+        btnSuma.addEventListener("click", () => {
+            console.clear();
+            console.warn("Me hicieron click en sumar");
+
+            // las 2 formas funcionan igual
+            // resultado = resultado + 1; // 1
+            resultado++; 
+
+            imprimirEnPantalla();
+        });
+
+        btnResta.addEventListener("click", () => {
+            console.clear();
+            console.warn("Me hicieron click en restar");
+            resultado--; // -1
+            
+            imprimirEnPantalla();
+        });
+
+        btnMulti.addEventListener("click", () => {
+            console.clear();
+            console.warn("Me hicieron click en Multi x 5");
+            resultado * 5; // 0
+            
+            imprimirEnPantalla();
+        });
+
+
+        // Crear Mi función de impresión
+        const imprimirEnPantalla = function(){
+            // imprimir resultado en la consola
+            console.log(resultado);
+            txtResultado.innerHTML= resultado;
+        }
+    </script>
+
+    
+
 
     <script>
         // dados 2 números, imprimir por consola, la suma, resta, multiplicación, división y módulo. 
         let num1 = 4;
         let num2 = 6;
-
-        const suma = num1 + num2; 
+        const suma = num1 + num2; // 10
         console.log( "La suma de num1: ", num1,
         " y num2: ", num2, "es igual a", suma);
+
+        const resta = mun2 - num1; // 2
+        const multiplica = 
+
     </script>
 </body>
 </html>

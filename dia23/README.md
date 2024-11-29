@@ -1,6 +1,12 @@
 # Javascript
 
-Es un lenguaje de programación de alto nivel, interpretado y orientado a objetos. Se utiliza para crear contenido dinámico e interactivo en sitios web.
+Es un lenguaje de programación de alto nivel, interpretado y orientado a objetos, que se usa principalmente para hacer páginas web interactivas (en concreto para crear contenido dinámico e interactivo en sitios web):
+
+1. Mostrar mensajes cuando el usuario hace clic en un botón.
+2. Cambiar el contenido de la página sin tener que recargarla.
+3. Validar formularios antes de enviarlos.
+4. Crear animaciones y efectos visuales.
+
 
 Lenguaje de alto nivel: 
 - está diseñado para ser fácil de leer y escribir para humanos.
@@ -81,19 +87,30 @@ al final del body.
 
 
 ## Funcionalidades 
+1. Interacción con el usuario: puede reaccionar a lo que el usuario hace en la página, como hacer clic en un botón, mover el ratón o escribir en un campo de texto.
 
-1. Manipulación del DOM (Documento Object Model): Agregar, modificar o eliminar elementos HTML y CSS.
-2. Procesar Formularios: Verificar datos ingreados por el usuario, formularios complejos de múltiples secciones.
-3. Manejo de animaciones: Manipular efectos visuales y animaciones en nuestra web.
-4. Manejo de eventos: responder a las acciones del usuario Ej: click, desplazarse por la web.
-5. Comunicación asíncrona con servidores mediante Ajax/Fetch: enviar y recibir datos de un servidore sin tener que recargar la página.
+2. Manipulación del DOM (Documento Object Model): Agregar, modificar o eliminar elementos HTML y CSS.
+
+3. Validar formularios: Antes de enviar un formulario (por ejemplo, un formulario de registro o contacto), JavaScript puede verificar que la información que el usuario ingresó sea correcta.
+(Ej. Comprobar si un campo de texto está vacío antes de enviarlo)
+
+4. Animaciones y efectos visuales: puede crear/manipular efectos como animaciones, cambios de color o desplazamientos de elementos en la página.
+
+5. Manejo de eventos: responder a las acciones del usuario Ej: click, desplazarse por la web.
+
+6. Conexión con servidores (Ajax/Fetch): puede comunicarse con servidores para obtener información sin recargar la página. Esto se usa, por ejemplo, en aplicaciones de redes sociales o en buscadores.
 
 
 ## Variables 
 
-- Son como cajas/cubetas que utilizamos para guardar información. Esta info puede ser un número, un texto, una lista de cosas y muchos otros tipos más.Nos permite almacenar datos para después modificarlos o usarlos en diferentes partes de nuestro programa.
+las variables son como cajas donde puedes guardar información. Esta información puede ser de distintos tipos, como números, texto, o incluso más complejos como listas o objetos.
+
+Nos permite almacenar datos para después modificarlos o usarlos en diferentes partes de nuestro programa.
+
+
+¿Cómo se usan las variables?
 - Definir una variable: Asignarle un nombre para encontrarla más adelante.
-- Asignar un valor: Es poner cosas dentro de la caja, se realiza con el símbolo "="
+- Asignar un valor: Se le da un valor a esa variable, que puede ser un número, texto, etc. (es decir, es poner cosas dentro de la caja, se realiza con el símbolo "=").
 
 En JS las variables se declaran con la palabra `let`o `const`. Antes se usaba la palabra `var`como valor. 
 
