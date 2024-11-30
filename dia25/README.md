@@ -140,21 +140,46 @@ if ("") {
 ### Reducción de condicionales quitando el else
 Podemos simplificar nuestro código condicional quitando el else. Esto es útil cuando no necesitamos un bloque falsy o cuando tenemos multiples condiciones.
 
+
+
+
 ```js
 let user="cei";
 let pass="Abc123";
 
 let mensaje="CORRECTA: Clave correcta";
+let tf_errores = false;
+
+pass="t cei 1234567";
+
 
 if(pass.length <= 8 ) {
     mensaje= "INCORRECTA: La pass debe tener al menos 8 caracteres";
+    console.log(mensaje);
+    tf_errores = true;
 }
+
 if(pass.includes ("")) {
     mensaje= "INCORRECTA: La pass no debe tener espacios";
+    console.log(mensaje);
+    tf_errores = true;
 }
+
 if(pass.includes (user)) {
     mensaje= "INCORRECTA: La pass no puede incluir tu nombre de usuario";
+    console.log(mensaje);
+    tf_errores = true;
 }
+
+if( tf_errores == false ) {
+    console.log(mensaje); // clave correcta o incorrecta 
+}
+
+
+
+
+
+
 
 // "abc 123" === "Abc 123" // falsy
 // "abc 123" === "abc 123" // truthy
@@ -207,7 +232,7 @@ let mensaje= `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
 // Insertar expresión
 let total = 50; 
 let iva = 0.21; 
-console.log(èl total con impuestos es: ${ total + total * iva}`);
+console.log(`el total con impuestos es: ${ total + total * iva}`);
 
 
 ```
@@ -215,5 +240,98 @@ console.log(èl total con impuestos es: ${ total + total * iva}`);
 
 
 3. Métodos de Strings
+JS nos ofrece una variedad de metodos para manipular cadenas de textos. Algunos ejemplos comunes son: 
+    - `toUpperCase()` y `toLowerCase()`
+    convierte todas las letras de una cadena en mayúsculas o minúsculas.
+
+    - `split()`
+    divide una cadena en una lista array basada en un separador.
+
+    - `slice()`
+    extrae una porción de la cadena basada en índices de inicio y fin.
+
+    - `replace()`
+    reemplaza una parte de la cadena por otra. 
+
+    - `trim()`
+    elimina los espacios en blanco al inicio y fin de la cadena. 
+
+    - `includes()`
+    verifica si una cadena contiene una subcadena espedífica.
+
+    - `startsWith()` y `endsWith()`
+    verifica si una cadena comienza o termina con una subcadena espedífica.
+
+    - `repeat()`
+    repite una cadena un número específico de veces.
+
+
+    ```js  
+    let text = "Me encanta Javascript";
+
+    // toUpperCase y toLowerCase 
+    console.log(text.toUppercase ()); // ME ENCANTA JAVASCRIPT 
+    console.log(text.toLowerCase ()); // me encanta javascript 
+
+    // split
+    const palabras = text.split(" ");
+    console.log(palabras); // ["Me", "encanta", "javascript"]
+    const palabras = text.split("encanta");
+    console.log(palabras_2); // ["Me", "javascript"]
+
+    let csv = "rojo, verde, azul"; 
+    console.log("Lista de colores: ", csv.split(","));  // ["rojo", "verde", "azul"]
+    "archivo.csv"
+
+
+
+    // slice
+    let frase = "Aprender javascript es muy divertido";
+    console.log("Parte de frase: ", frase.slice(9,19)); // "javascript"
+    console.log("Desde el indice 9 al final: ", frase.slice (9)); // "javascript es divertido"
+
+    // replace
+    let frase = "Hola mundo. hola universo";
+    console.log("reemplazar 'hola' por 'Hola?: "; frase.replace("hola", "Hola"));
+    console.log("reemplazar todos los 'hola' por 'Hola?: "; frase.replace(/hola/g, "Hola"));
+    // cambia todos usando regEX (expresiones regulares)
+
+
+    // trim
+    let frase = "     Hola mi nombre es Luka  ";
+    console.log("luego de hacer trim: ", frase.trim()); // despues de hacer trim: Hola mi    nombre es Luka"
+
+
+    // includes
+    let frase = "El sol brilla en el cielo";
+    console.log("contiene 'sol'?: ", frase.includes("sol")); 
+    console.log("contiene 'luna'?: ", frase.includes("luna")); 
+
+
+    // starsWith y endsWith 
+    let frase = "Javasript es genial"; 
+
+    console.log("¿Empieza con 'Java'?: ", frase.starsWith("Java")); // true
+    console.log("¿Termina con 'genial'?: ", frase.endsWith("genial")); // true
+
+
+    // repeat 
+    let risa = "Ja"; 
+    console.log("Me causa mucha gracia:", risa.repeat(3)); // JaJaJa
+    ```
+
+    Podemos cambiar los metodos
+
+    ```js
+    letfrase = "   No me gusta javascript en diseño web   ";
+
+    let resultado = frase.trim() // elimina espacios en blanco
+                         .toUpperCase() // convierte el texto a mayusculas 
+                         .replace();  // reemplaza texto en mayusculas pq el metodo anterior le hizo .toUpperCase()
+    
+    console.log(resultado); // ME ENCANTA JAVASCRIPT EN DISEÑO WEB
+
+    ```
+
 
 
