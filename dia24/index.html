@@ -13,6 +13,7 @@
     <button id="btnResta">Resta 1</button>
 
     <button id="btnMulti">Multiplica por 5</button>
+    <button id="btnClear">Clear</button>
 
     <h3>Cantidad de clicks</h3>
     <div id="resultado">0000000000</div>
@@ -26,6 +27,7 @@
         const btnSuma = document.querySelector("#btnSuma");
         const btnResta = document.querySelector("#btnResta"); 
         const btnMulti = document.querySelector("#btnMulti"); 
+        const btnClear = document.querySelector("#btnClear");
         const txtResultado = document.querySelector("#resultado"); 
 
 
@@ -63,6 +65,14 @@
             imprimirEnPantalla();
         });
 
+        btnClear.addEventListener("click", () => {
+            console.clear();
+            console.warn("Me hicieron click en Clear");
+            resultado = 0; 
+            
+            imprimirEnPantalla();
+        });
+
 
         // Crear Mi función de impresión
         const imprimirEnPantalla = function(){
@@ -70,6 +80,11 @@
             console.log(resultado);
             txtResultado.innerHTML= resultado;
         }
+
+
+
+
+
     </script>
 
     
