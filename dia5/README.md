@@ -1,7 +1,5 @@
-# APUNTES DIA 5
-
-
 # Flexbox
+
 # Justify content
 <!-- la propiedad de justify content alinea elementos horizontalmente  -->
 
