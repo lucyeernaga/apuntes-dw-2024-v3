@@ -52,6 +52,43 @@
     <button id="ej5">ej5</button>
     <button id="ej6">ej6</button>
 
+
+    <script>
+        // este código hace algo
+        function esPar(numero) {
+
+            // averiguar si es par o no...
+            // let txtParImpar="Soy un numero impar";
+            //if(numero%2 == 0){  // soy par
+            //    txtParImpar="Soy un numero par"
+            // }
+
+            txtParImpar = (numero%2 == 0)  ? "Soy par"
+                                           : "Soy impar"
+
+
+
+            return `Tu numero ${numero} es ${txtParImpar}`;
+        }
+
+        //obtener un elemtno de HTML
+        const btnEj1 = document.querySelector("#ej1"); 
+
+
+        btnEj1.addEventListener("click", () => {
+            //  pedirle un numero al usuario
+            let numero = prompt("Ingresa un numero"); 
+            let resultado = esPar(numero);
+
+            // imprimir en consola y pantalla
+            console.log(resultado); 
+            alert
+        }); 
+    </script>
+
+
+
+
     <script>
         // Ejercicio 1
         document.querySelector("#ej1").addEventListener("click", () => {
@@ -230,11 +267,6 @@
         //     let resultado = "Los arrays son distintos";
         //    if(    (array1[0] !== array2[0])   &&   (array1[1] !== array2[1])   &&   (array1[2] !== array2[2])) 
         //    resultado = "Los arrays son iguales"; 
-        
-                
-
-
-
 
             // llamo a la funcion con 1 argumento 
             // imprimirResultado(resultado);
@@ -266,6 +298,7 @@
         imprimirResultado("chau a todos");
         */
     </script>
+
 
 
 

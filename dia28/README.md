@@ -2,6 +2,13 @@
 
 Utilizando funciones, condicionales y operadores comparativod, realizar los siguientes ejercicios: 
 
+```js
+// pedirle un numero al usuario 
+let numero = promt("Ingresa un numero");
+```
+
+
+
 1. Crear una funcion que reciba un numero y devuelva si es par o impar.
 2. Crear una funcion que reciba un numero y devuelva si es positivo, negativo o cero.
 3. Crear una funcion que si le envio una edad me devuelva si es mayor o menor de edad.
