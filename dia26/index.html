@@ -53,36 +53,28 @@
     <button id="ej6">ej6</button>
 
     <script>
-        // Ejercicio 1: Convertir el texto "      Hola Mundo" todo en mayus. sin espacios al principio o al final.
-
+        // Ejercicio 1
         document.querySelector("#ej1").addEventListener("click", () => {
-            let text1 = "      Hola Mundo";
 
-            let resultado = text1.trim()             // eliminar espacios en blanco
-                            .toUpperCase();         // convierte el texto en mayus.
+            const texto = "      Hola Mundo";
+            // console.log(texto);
+            // alert(texto);
+            const resultado = texto.trim().toUpperCase();
 
-            console.log(resultado);  
-            alert(resultado);                       // imprime HOLA MUNDO  
-        })
-        
-    </script>
-
-    <script>
-        // Ejercicio 2: Del texto "Estoy aprendiendo Javascript y PHP" iniciar si está presente javascript y si está presente Javascript.
-
-        document.querySelector("#ej2").addEventListener("click", () => {
-            const text2 = "Estoy aprendiendo Javascript y PHP";
-            console.log("¿Está presente 'Javascript' y 'PHP' en el texto?:", text2.includes("Javascript", "PHP"));
+            // llamo a la funcion con 1 argumento 
+            imprimirResultado(resultado);
         });
 
 
-       const btnEj2 = document.querySelector("#ej2");
+        // Ejercicio 2
+        const btnEj2 = document.querySelector("#ej2");
         btnEj2.addEventListener("click", () => {
             const text = "Estoy aprendiendo Javascript y PHP";
 
-            let mensaje = ""; 
+            let mensaje = "";
             // mensaje = "" + "" + "" + "" + "Javascript esta presente";
 
+            /* Versón con if
             if( text.includes("Javascript")    ){
                 // en caso de truthy 
                 mensaje += "Javascript esta presente \n";
@@ -98,55 +90,158 @@
                 // va a pasar esto otro (si es false)
                 mensaje += "PHP NO esta presente \n";
             }
+            */
 
-            // operacion ternaria (if) ( en 1 sola linea, escribí las 5 lineas de arriba)
+            // Versón con operacion ternaria (if) ( en 1 sola linea, escribí las 5 lineas de arriba)
             // resultado = ("pregunta") ? "verdadero"  : "falso"; 
-            mensaje = text.includes("Javascript") ? "Javascript esta presente \n"  : "Javascript NO esta presente \n"; 
+            // solo cuando tengo true y false, y cuando cada bloque tiene una sola linea de resultado.
+
+            mensaje += text.includes("Javascript") ? "Javascript esta presente \n"        // true
+                : "Javascript NO esta presente \n";    // false
+
+            mensaje += text.includes("PHP") ? "PHP esta presente \n"        // true
+                : "PHP NO esta presente \n";    // false 
 
             console.log(mensaje);
 
+            // llamo a la funcion con 1 argumento 
+            imprimirResultado(resultado);
+
         });
 
-        // operacion ternaria (if)
 
-    </script>
-
-    <script>
-        // Ejercicio 3: Separar el siguiente texto en una lista e imprimir el último valor "Lechuga, tomate, peras, manzanas"
-
+        // Ejercicio 3
         document.querySelector("#ej3").addEventListener("click", () => {
-            const text3 = "Lechuga, tomate, peras, manzanas";
-            console.log(text3.split(", "));
+
+            const texto = "Lechuga, tomate, Peras, Uvas, Naranjas, Mandarinas, Manzanas";
+            const listaItems = texto.split(", ");  // convertir string en lista
+
+
+            // const resultado = "Manzanas";
+            // const resultado = texto.slice(24, 32); // Manzanas
+            // const resultado = texto.slice(24); // Manzanas
+
+            // usando indice del array
+            // const resultado = listaItems[3]; 
+
+            // const cantDeItems = listaItems.length;  // usamos la prop length para calcular que son 4 elementos
+            // const resultado = listaItems[cantDeItems -1]; // obtenemos el indice 3 haciendo 4 -1
+
+            // usando el método POP
+            // pop() quita de la lista el último elemento, y lo deja en resultado.
+            const resultado = listaItems.pop();
+
+
+            console.log(resultado);
+            console.log(listaItems);
+
+
+            // llamo a la funcion con 1 argumento 
+            imprimirResultado(resultado);
         });
-    </script>
 
-    <script>
-        // Ejercicio 4: De cualquier frase que ingrese, agregar tilde a todas las vocales. ej: "practicando javascript" => "práctícándó jáváscrípt"
 
+
+        // Ejercicio 4
         document.querySelector("#ej4").addEventListener("click", () => {
-            const text4 = "Estoy practicando Javascript";
-            console.log(text4.replace(text4, "Éstóy práctícándó Jáváscrípt"));
+            let tildes = "Me gustan las ranitas";
+            
+
+            // posibles soluciones: 
+            // const resultado = "Mé gústán lás ránítás"
+            // const resultado = tildes.replace("Me gustan las ranitas", "Mé gústán lás ránítás");
+            
+           
+            // const resultado = texto.replace("a", "á");
+            // // console.log(resultado);
+            // const resultado = texto.replace("e", "é");
+            // // console.log(resultado);
+            // const resultado = texto.replace("i", "í");
+            // // console.log(resultado);
+            // const resultado = texto.replace("o", "ó");
+            // // console.log(resultado);
+            // const resultado = texto.replace("u", "ú");
+            // // console.log(resultado);
+            
+
+            // let resultado = texto.replace("a", "á").replace("e", "é").replace("i", "í").replace("o", "ó").replace("u", "ú");
+            // let resultado = texto   .replace(/[aA]/g, "á")
+            //                         .replace(/[eE]/g, "é")
+            //                         .replace(/[iI]/g, "í")
+            //                         .replace(/[oO]/g, "ó")
+            //                         .replace(/[uU]/g, "ú");
+
+
+            let resultado = ""; 
+
+            resultado=resultado.replace("a", "á");
+            resultado=resultado.replace("e", "é");
+            resultado=resultado.replace("i", "í");
+            resultado=resultado.replace("o", "ó");
+            resultado=resultado.replace("u", "ú");
+
+
+
+            // llamo a la funcion con 1 argumento 
+            imprimirResultado(resultado);
         });
-    </script>
 
-    <script>
-        // Ejercicio 5: Ver si estos 2 arrays son iguales ["Manzana", "Pera", "Uvas"] y ["manzana" , "pera" y "uvas"]
+        // Ejercicio 5
+        document.querySelector("#ej4").addEventListener("click", () => {
 
-        document.querySelector("#ej5").addEventListener("click", () => {
-            const text5 = ["Manzana", "Peras", "Uvas"];
-            console.log("¿Ambas listas son iguales?:", text5 == ["manzana" , "pera", "uvas"]);
+            // const array1 = ["Manzana", "Pera", "Uvas"]; 
+            const array1 = ["manzana", "pera", "uvas"]; 
+            const array2 = ["manzana", "pera", "uvas"]; 
+
+            // es incorrecto, pq esamos comparando llaves en vez de camiones
+            // let resultado="No son iguales"; 
+            // if(array1==array2){
+            //   resultado="Son iguales";
+            // }
+            // console.log(   array1==array2 );
+            
+
+            let resultado = "Los arrays son iguales";
+
+            if(array1[0] !== array2[0]){
+                resultado = "Los arrays son distintos"; 
+            }
+            if(array1[1] !== array2[1]){
+                resultado = "Los arrays son distintos"; 
+            }
+            if(array1[2] !== array2[2]){
+                resultado = "Los arrays son distintos"; 
+            }
+
+            // llamo a la funcion con 1 argumento 
+            imprimirResultado(resultado);
         });
-    </script>
 
-    <script>
-        // Ejercicio 6: Convertir el texto "tOMi123!!" en "tomi123!"
+        // Ejercicio 6
 
-        document.querySelector("#ej6").addEventListener("click", () => {
-            const text6 = "tOMi123!!";
-            const result6 = text6.toLowerCase()
-                                 .replace("!", "");
-            console.log(result6);
-        });
+
+
+
+
+        // Generando la funcion
+        // las variables que posee la función son parámetros
+        function imprimirResultado(mensaje) {
+
+            console.log(mensaje);
+            alert(mensaje);
+            // cargar el valor en un input
+        }
+
+
+        /*
+        // Ejecutando la función
+        // los valores que le mando a la funcion se argumentos 
+        imprimirResultado("hola a todos");
+
+        console.log("otra cosa...");
+
+        imprimirResultado("chau a todos");
+        */
     </script>
 
 
