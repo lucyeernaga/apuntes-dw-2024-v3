@@ -145,6 +145,13 @@
         // Ejercicio 4
         document.querySelector("#ej4").addEventListener("click", () => {
             let tildes = "Me gustan las ranitas";
+            let resultado = tildes.replace(/[aA]/g, "á")
+                                 .replace(/[eE]/g, "é")
+                                 .replace(/[iI]/g, "í")
+                                 .replace(/[oO]/g, "ó")
+                                 .replace(/[uU]/g, "ú");
+            imprimirResultado(resultado);
+        });
             
 
             // posibles soluciones: 
@@ -172,25 +179,39 @@
             //                         .replace(/[uU]/g, "ú");
 
 
-            let resultado = ""; 
+            // let resultado = ""; 
 
-            resultado=resultado.replace("a", "á");
-            resultado=resultado.replace("e", "é");
-            resultado=resultado.replace("i", "í");
-            resultado=resultado.replace("o", "ó");
-            resultado=resultado.replace("u", "ú");
+            // resultado=resultado.replace("a", "á");
+            // resultado=resultado.replace("e", "é");
+            // resultado=resultado.replace("i", "í");
+            // resultado=resultado.replace("o", "ó");
+            // resultado=resultado.replace("u", "ú");
 
+
+            // imprimirResultado(resultado);
+
+
+        // Ejercicio 5
+        document.querySelector("#ej5").addEventListener("click", () => {
+            const array1 = ["manzana", "pera", "uvas"];
+            const array2 = ["manzana", "pera", "uvas"];
+            
+            let resultado = "Los arrays son iguales";
+            if (array1.length === array2.length) {
+                for (let i = 0; i < array1.length; i++) {
+                    if (array1[i] !== array2[i]) {
+                        resultado = "Los arrays son distintos";
+                        break;
+                    }
+                }
+            } else {
+                resultado = "Los arrays son distintos";
+            }
 
             imprimirResultado(resultado);
         });
 
-        // Ejercicio 5
-        document.querySelector("#ej4").addEventListener("click", () => {
-
-            // const array1 = ["Manzana", "Pera", "Uvas"]; 
-            const array1 = ["manzana", "pera", "uvas"]; 
-            const array2 = ["manzana", "pera", "uvas"]; 
-
+        
             // es incorrecto, pq esamos comparando llaves en vez de camiones
             // let resultado="No son iguales"; 
             // if(array1==array2){
@@ -200,24 +221,24 @@
             
 
             // Solución 2 operador || OR - "o"
-            let resultado = "Los arrays son iguales";
-            if(array1[0] != array2[0])   ||   (array1[1] != array2[1])   ||     (array1[2] != array2[2]) { resultado = "Los arrays son distintos";
+        //     let resultado = "Los arrays son iguales";
+        //     if(array1[0] != array2[0])   ||   (array1[1] != array2[1])   ||     (array1[2] != array2[2]) { resultado = "Los arrays son distintos";
 
-            }
+        //     }
 
-            // Solución 3 operador && AND - "y"
-            let resultado = "Los arrays son distintos";
-           if(    (array1[0] !== array2[0])   &&   (array1[1] !== array2[1])   &&   (array1[2] !== array2[2])) 
-           resultado = "Los arrays son iguales"; 
-        }
+        //     // Solución 3 operador && AND - "y"
+        //     let resultado = "Los arrays son distintos";
+        //    if(    (array1[0] !== array2[0])   &&   (array1[1] !== array2[1])   &&   (array1[2] !== array2[2])) 
+        //    resultado = "Los arrays son iguales"; 
+        
                 
 
 
 
 
             // llamo a la funcion con 1 argumento 
-            imprimirResultado(resultado);
-        });
+            // imprimirResultado(resultado);
+       
 
         // Ejercicio 6
 
@@ -246,6 +267,29 @@
         */
     </script>
 
+
+
+
+    <script>
+        function sumar3Numeros(num1, num2, num3){
+
+            let resultado = num1+num2+num3;
+
+            console.log(resultado);
+
+            return resultado;
+        }
+
+        let total = sumar3Numeros(5, 10, 8);
+        console.log(total); // 23
+
+
+
+        // sumar2Numeros(4, 13, 8);
+        // sumar2Numeros(8, 1, 8);
+        // sumar2Numeros(0, -1, 8);
+
+    </script>
 
 </body>
 
