@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        main {
+            display: flex;
+            gap: 10;
+        }
+
+        button {
+            border: 1px solid gray;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            /* For Safari */
+            background-clip: text;
+            /* For modern browsers*/
+            color: transparent;
+            font-size: 3rem;
+            /* Adjust the font-size as needed*/
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Actividad de manipulación de Textos</h1>
+    <pre>
+        1)  Convertir el texto "      Hola Mundo" todo en mayus. sin espacios al principio o al final.
+        2)  Del texto "Estoy aprendiendo Javascript y PHP" iniciar si está presente javascript y si está presente Javascript.
+        3)  Separar el siguiente texto en una lista e imprimir el último valor "Lechuga, tomate, peras, manzanas"
+        4)  De cualquier frase que ingrese, agregar tilde a todas las vocales. ej: "practicando javascript" => "práctícándó jáváscrípt"
+        5)  Ver si estos 2 arrays son iguales ["Manzana", "Pera", "Uvas"] y ["manzana" , "pera" y "uvas"]
+        6)  Convertir el texto "tOMi123!!" en "tomi123!"
+    </pre>
+
+
+    <button id="ej1">ej1</button>
+    <button id="ej2">ej2</button>
+    <button id="ej3">ej3</button>
+    <button id="ej4">ej4</button>
+    <button id="ej5">ej5</button>
+    <button id="ej6">ej6</button>
+
+    <script>
+        // Ejercicio 1: Convertir el texto "      Hola Mundo" todo en mayus. sin espacios al principio o al final.
+
+        document.querySelector("#ej1").addEventListener("click", () => {
+            let text1 = "      Hola Mundo";
+
+            let resultado = text1.trim()             // eliminar espacios en blanco
+                            .toUpperCase();         // convierte el texto en mayus.
+
+            console.log(resultado);  
+            alert(resultado);                       // imprime HOLA MUNDO  
+        })
+        
+    </script>
+
+    <script>
+        // Ejercicio 2: Del texto "Estoy aprendiendo Javascript y PHP" iniciar si está presente javascript y si está presente Javascript.
+
+        document.querySelector("#ej2").addEventListener("click", () => {
+            const text2 = "Estoy aprendiendo Javascript y PHP";
+            console.log("¿Está presente 'Javascript' y 'PHP' en el texto?:", text2.includes("Javascript", "PHP"));
+        });
+
+
+       const btnEj2 = document.querySelector("#ej2");
+        btnEj2.addEventListener("click", () => {
+            const text = "Estoy aprendiendo Javascript y PHP";
+
+            let mensaje = ""; 
+            // mensaje = "" + "" + "" + "" + "Javascript esta presente";
+
+            if( text.includes("Javascript")    ){
+                // en caso de truthy 
+                mensaje += "Javascript esta presente \n";
+            } else {
+                // en caso de falsy
+                mensaje += "Javascript NO esta presente \n";
+            }
+
+            if( text.includes("PHP")    ){
+                // va a pasar esto (si es true)
+                mensaje += "PHP esta presente \n";
+            } else {
+                // va a pasar esto otro (si es false)
+                mensaje += "PHP NO esta presente \n";
+            }
+
+            // operacion ternaria (if) ( en 1 sola linea, escribí las 5 lineas de arriba)
+            // resultado = ("pregunta") ? "verdadero"  : "falso"; 
+            mensaje = text.includes("Javascript") ? "Javascript esta presente \n"  : "Javascript NO esta presente \n"; 
+
+            console.log(mensaje);
+
+        });
+
+        // operacion ternaria (if)
+
+    </script>
+
+    <script>
+        // Ejercicio 3: Separar el siguiente texto en una lista e imprimir el último valor "Lechuga, tomate, peras, manzanas"
+
+        document.querySelector("#ej3").addEventListener("click", () => {
+            const text3 = "Lechuga, tomate, peras, manzanas";
+            console.log(text3.split(", "));
+        });
+    </script>
+
+    <script>
+        // Ejercicio 4: De cualquier frase que ingrese, agregar tilde a todas las vocales. ej: "practicando javascript" => "práctícándó jáváscrípt"
+
+        document.querySelector("#ej4").addEventListener("click", () => {
+            const text4 = "Estoy practicando Javascript";
+            console.log(text4.replace(text4, "Éstóy práctícándó Jáváscrípt"));
+        });
+    </script>
+
+    <script>
+        // Ejercicio 5: Ver si estos 2 arrays son iguales ["Manzana", "Pera", "Uvas"] y ["manzana" , "pera" y "uvas"]
+
+        document.querySelector("#ej5").addEventListener("click", () => {
+            const text5 = ["Manzana", "Peras", "Uvas"];
+            console.log("¿Ambas listas son iguales?:", text5 == ["manzana" , "pera", "uvas"]);
+        });
+    </script>
+
+    <script>
+        // Ejercicio 6: Convertir el texto "tOMi123!!" en "tomi123!"
+
+        document.querySelector("#ej6").addEventListener("click", () => {
+            const text6 = "tOMi123!!";
+            const result6 = text6.toLowerCase()
+                                 .replace("!", "");
+            console.log(result6);
+        });
+    </script>
+
+
+</body>
+
+</html>
