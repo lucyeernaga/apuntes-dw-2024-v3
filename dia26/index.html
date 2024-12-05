@@ -324,6 +324,47 @@
 
     </script>
 
+    <script>
+
+        /**
+         * Esta función suma 2 números
+         * 
+         * @params {number} num1 - num Es el primer numero
+         * @params {number} num2 - num Es el segundo numero
+         * @return {number} la suma de los 2 números
+        */
+        function Sumar(num1, num2){
+            return num1+num2;
+        }
+
+
+        // ej de función flecha
+        const Sumar = (num1, num2) => {
+            return num1+num2;
+        }
+
+
+        //este ejemplo de abajo es lo mismo que las 2 funciones de arriba
+        const btn1 = document.querySelector("#btn1");
+        // ej de función flecha sin nombrar
+        btn1.addEventListener("click", (num1, num2) => { 
+            return num1 + num2;
+        });
+
+
+        const valor = Sumar(5,3); //8
+
+        const alumno = {
+            nombre: "Juan",
+            edad: 25,
+            // función flecha
+            estudiar: (materia) => {
+                alert("Estoy estudiando "+materia);
+            }
+        }
+
+        alumno.estudiar("programación");
+    </script>
 
 
 </body>
