@@ -46,7 +46,6 @@ let numero = promt("Ingresa un numero");
         }
     });
 
-
     // Ejercicio 3 - Mayor o menor de edad
     function mayorOMenorEdad(numero) {
         if (numero >= 18) {
@@ -60,6 +59,61 @@ let numero = promt("Ingresa un numero");
     mayorOMenorEdad.addEventListener("click", () => {
 
     });
+
     // Ejercicio 4 - Dia de la semana laboral o no
+    function diaSemana(dia) {
+        dia = dia.trim().toLowerCase(); 
+        const lunes = "lunes";
+        const martes = "martes";
+        const miercoles = "miercoles";
+        const jueves = "jueves";
+        const viernes = "viernes";
+        const sabado = "sabado";
+        const domingo = "domingo";
+
+        let mensaje = "Laborable"; 
+        // if (dia == lunes || dia == martes || dia == miercoles || dia == jueves || dia == viernes) {
+        //     mensaje = "Laborable";
+        // }
+        if (dia == sabado || dia == domingo) { mensaje = "NO Laborable";}
+        
+        return mensaje;
+    };
+
+    btnEj4.addEventListener("click", () => {
+        let dia = prompt("Día de la semana");
+
+        let resultado = diaSemana(dia);
+        console.log(resultado);
+    });
+
     // Ejercicio 5 - "piedra", "papel" o "tijera"
+    function PiedraPapel(jugador1, jugador2) {
+        const = piedra = "piedra";
+        const = papel = "papel";
+        const = tijera = "tijera";
+        let mensaje = "";
+
+
+    // if (jugador1 == piedra && jugador2 == piedra, jugador1 == papel && jugador2 == //papel, jugador1 == tijera && jugador2 == tijera) { mensaje = "Empate";}
+
+    // if (jugador1 == piedra %% jugador2 == papel) || (jugador1 == tijera %% jugador2 //== piedra) || (jugador1 == papel %% jugador2 == tijera) 
+    // { mensaje = "Gana jugador 2;
+    // } else {mensaje = "Gana jugador 1";}
+
+
+
+        if (jugador1 == piedra && jugador2 == piedra) { mensaje = "Empate";}
+        if (jugador1 == papel && jugador2 == papel) { mensaje = "Empate";}
+        if (jugador1 == tijera && jugador2 == tijera) { mensaje = "Empate";}
+        if (jugador1 == piedra && jugador2 == papel) { mensaje = "Gana jugador 2";}
+        if (jugador1 == papel && jugador2 == piedra) { mensaje = "Gana jugador 1";}
+        if (jugador1 == tijera && jugador2 == piedra) { mensaje = "Gana jugador 2";}
+        if (jugador1 == piedra && jugador2 == tijera) { mensaje = "Gana jugador 1";}
+        if (jugador1 == papel && jugador2 == tijera) { mensaje = "Gana jugador 2";}
+        if (jugador1 == tijera && jugador2 == papel) { mensaje = "Gana jugador 1";}
+
+
+        return mensaje;
+    };
 </script>
