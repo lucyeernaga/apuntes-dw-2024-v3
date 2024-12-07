@@ -10,13 +10,24 @@ for(let i=0; i< 10; i++){
 // Bucle ForEach (por cada elemento quiero hacer algo) forEach es un metodo de lista y lista es un array, o sea que cualquier array tiene un metodo forEach
 // A diferencia del For, trabajamos directamente con un metodo de listas, y podemos acceder tanto al valor como al indice.
 const listaNumeros = [1,2,3,4,6];
-
 listaNumeros.forEach( (numero, indice) => {
     console.log(`Elemento ${numero} y su indice es ${índice}`);
 });
 
+listaNumeros.forEach( (numero) => {
+    console.log(`Elemento ${numero}`;)
+});
 
-// Bucle While
+
+listaNumeros.forEach( (num, 1) => {
+    // actualizamos los valores de la lista, sumandole 1 a cada uno
+    listaNumeros[i]=num+1;
+});
+console.log(listaNumeros); // [2,3,4,5,7]
+
+
+
+// Bucle While (mientras)
 let i = 0;
 while(i< 10){
     console.log(i);
@@ -62,6 +73,18 @@ listaAlumnos.forEach( alumno => console.log(alumno));
 
 
 // ej3
+
+let numero=-1;
+let total=0;
+
+    while(true){
+
+        numero = prompt("ingresa un numero distinto a 0");
+        numero = Number(numero);
+        total= total+numero;
+        console.log(total;)
+    }
+
 
 
 ```
