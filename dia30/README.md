@@ -74,7 +74,7 @@ listaAlumnos.forEach( alumno => console.log(alumno));
 
 // ej3
 
-let numero=-1;
+let numero;
 let total=0;
 
     while(true){
