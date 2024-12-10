@@ -1,4 +1,4 @@
-# Bucles: For, ForEach, While, Do-While
+# Bucles: For, ForEach, While, Do-While, Map
 
 ```js
 // Bucle For: ejecutar un código x cantidad de veces. Es muy util para trabajar con indices
@@ -36,8 +36,52 @@ while(i< 10){
 
 
 
+// Do-while
+// la diferencia con While es que este bucle se ejecuta siempre al menos 1 vez.
+let ii = 0;
+do {
+    console.log(ii);
+    ii++;
+} while (ii < 10);
+
+
+
+
+// Bucle Map
+// Esta lista no solo procesa el bucle, sino que tb me devuelve una copia de esa lista.
+// a diferencia del foreach, el metodo Map devuelve una copia del array 
+// Ninguno de los 2 modifica el array original
+const lista_nums= [1,2,3,7];
+const lista_copia = lista_nums.map( (numero, index)=>{
+    console.log(`Numero ${numero} en la posición ${index}`);
+});
+
+console.log(lista_nums); // [1,2,3,7];
+console.log(lista_copia); // [1,2,3,7];
+
+const lista_dobles = lista_nums.map( (num)=>{
+    // num = num*2;
+    return num*2;
+});
+
+
+console.log(lista_dobles); // [2,4,6,14]
+
+
+
+
+
+
+
+
+
 
 ```
+
+
+
+
+
 
 # Ejercicios
 
@@ -77,14 +121,27 @@ listaAlumnos.forEach( alumno => console.log(alumno));
 let numero;
 let total=0;
 
-    while(true){
+    while(numero !=0) {
 
-        numero = prompt("ingresa un numero distinto a 0");
-        numero = Number(numero);
-        total= total+numero;
+        numero = prompt("Ingresa un valor"); // "5"
+        numero = Number(numero); // "5" => 5
+        numero = parseInt(numero); // "5" => 5
+
+        total += numero; // 0 + 5 = 5
         console.log(total;)
     }
 
 
+let numero;
+let total=0;
 
+    do {
+        numero = prompt("Ingresa un valor"); // "5"
+        numero = Number(numero); // "5" => 5
+        numero = parseInt(numero); // "5" => 5
+
+        total += numero; // 0 + 5 = 5
+    } while(numero !=0);
+
+    alert(total);
 ```
