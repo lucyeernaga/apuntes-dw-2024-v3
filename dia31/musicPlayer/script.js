@@ -1,13 +1,26 @@
 // EJERCICIO 1, EJERCICIO 2
 const lista_canciones = ["All I want for Christmas is you", "Last Christmas", "Holly Jolly Christmas", "It's the most wonderful time of the year", "Santa tell me"]
 const lista_artistas = ["Mariah Carey", "Wham!", "Michael Bublé", "Andy Williams", "Ariana Grande"]
-const lista_mp3 = ["", "", "", "", ""];
+const lista_mp3 = ["https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", 
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3", 
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3", 
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3", 
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"];
 
 
 
 
 const divListaCanciones = document.getElementById("ListaCanciones");
+
+// obtener nuestro audios HTML
+// usando querySelector para agarrar una etiqueta HTML
+const audio = document.querySelector("audio");
+
+
 let idCancionActual = 0; // primera cancion
+
+
+
 
 // EJERCICIO 3
 lista_canciones.forEach((cancion, index) => {
@@ -62,13 +75,17 @@ function imprimirReproduciendo() {
 
     const song = lista_canciones[idCancionActual];
     const artist = lista_artistas[idCancionActual];
-    console.log("Artista: " + artist + " - cancion: " + song);
+    console.log("Artista: " +artist+ " - cancion: " + song);
 
     divPlayingSong.innerHTML = `<div> 
-                                    idcancionActual: ${idCancionActual} <br/>
+                                    idCancionActual: ${idCancionActual} <br/>
                                     cancion: ${song} <br/>
                                     artista: ${artist}
                                 </div>`;
+
+    // cambiar el src de nuestro audio HTML
+    console.log(audioPlayer);
+    audioPlayer.src = lista_mp3[idCancionActual];
 }
 
 
