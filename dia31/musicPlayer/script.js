@@ -1,6 +1,10 @@
 // EJERCICIO 1, EJERCICIO 2
 const lista_canciones = ["All I want for Christmas is you", "Last Christmas", "Holly Jolly Christmas", "It's the most wonderful time of the year", "Santa tell me"]
 const lista_artistas = ["Mariah Carey", "Wham!", "Michael Bublé", "Andy Williams", "Ariana Grande"]
+const lista_mp3 = ["", "", "", "", ""];
+
+
+
 
 const divListaCanciones = document.getElementById("ListaCanciones");
 let idCancionActual = 0; // primera cancion
@@ -13,6 +17,7 @@ lista_canciones.forEach((cancion, index) => {
     const artist = lista_artistas[index];
 
     // innerHTML (usamos el + para agregar un nuevo elemento) apend, push, +=
+    
     // divListaCanciones.innerHTML += `<div class="Lista-cancion">
     //                                   ${index}. ${song} <br> ${artist}
     //                            </div>`;
@@ -26,9 +31,10 @@ lista_canciones.forEach((cancion, index) => {
 // EJERCICIO 4
 const btnTema3 = document.querySelector("#btnTema3");
 btnTema3.addEventListener("click", () => {
+    idCancionActual = 2;
     // indice 2 es cancion num3 porque empieza de 0.
-    console.log("Cancion: ", lista_canciones[2]);
-    console.log(`Artista: ${lista_artistas[2]}`);
+    // console.log("Cancion: ", lista_canciones[2]);
+    // console.log(`Artista: ${lista_artistas[2]}`);
     imprimirReproduciendo(2); // Holly Jolly Christmas de MB
 })
 
@@ -59,6 +65,7 @@ function imprimirReproduciendo() {
     console.log("Artista: " + artist + " - cancion: " + song);
 
     divPlayingSong.innerHTML = `<div> 
+                                    idcancionActual: ${idCancionActual} <br/>
                                     cancion: ${song} <br/>
                                     artista: ${artist}
                                 </div>`;
@@ -72,12 +79,31 @@ const btnAnt = document.querySelector("#btnAnt");
 
 btnSig.addEventListener("click", ()=> {
     idCancionActual++;
+
+    // preguntar algo.. que si es la ultima cancion 
+        if(idCancionActual == lista_canciones.length -1) {
+            idCancionActual = 0; // si es cierto, idCancion = 0
+        } else {
+            idCancionActual++; // si no es cierto, idCancion va a sumar 1 
+        }
+
     // revisar que no me pase de la ultima cancion (empiece x la 1a)
     imprimirReproduciendo();
 });
 
 btnAnt.addEventListener("click", ()=> {
     idCancionActual--;
+
+    // preguntar si estoy en la primera cancion
+    if(idCancionActual == 0){
+        idCancionActual = lista_canciones.length -1; // 4
+    } else {
+        idCancionActual--;
+    }
+
+
+
+
     // que si estoy en la primera, me voy a última
     imprimirReproduciendo();
 });
