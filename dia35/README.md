@@ -9,7 +9,7 @@ const numeros = [1,2,3,4,5];
 const cuadrados = [];
 numeros.forEach((num) => {
     console.log(num);
-    cuadrados.push(num * num);
+    cuadrados.push(num*num);
 });
 
 // numeros;forEach(num=>{
