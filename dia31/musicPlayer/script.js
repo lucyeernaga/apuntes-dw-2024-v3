@@ -86,16 +86,16 @@ function imprimirReproduciendo() {
     const song = lista_canciones[idCancionActual].titulo;
     const artist = lista_canciones[idCancionActual].artista;
     const url = lista_canciones[idCancionActual].url;
-
-    // const img = " https://www.michaelbuble.com/sites/g/files/g2000019061/files/styles/home_page_news_thumbnail/public/2024-10/MB%20News%20Post%20Icon%20SIze.png?itok=0VJNPHGO"
     const img = lista_canciones[idCancionActual].img; 
+    const imgId = `imagenReproduciendo_${idCancionActual}`; // he creado un id único
+    
     console.log("Artista: " +artist+ " - cancion: "+song);
 
     divPlayingSong.innerHTML = `<div class="playingSong"> 
-                                  CancionActual: ${idCancionActual} <br/>
+                                  Cancion Actual: ${idCancionActual} <br/>
                                   Cancion: ${song} <br/>
                                   Artista: ${artist} <br/>
-                                  <img class="imagenReproduciendo" src='${img}' alt="${song}" />
+                                  <img class="imagenReproduciendo" id="${imgId}" src='${img}' alt="${song}" />
                                 </div>`;
 
     // cambiar el src de nuestro audio HTML
@@ -182,7 +182,7 @@ lista_canciones.forEach((cancion, index)=>{
     //                            </div>`;
 
     divListaCanciones.innerHTML += `<div id="song_${index}" class="Lista-cancion">
-                                      <img src="${img}" alt="${song}" width="20px" height="20px"/>
+                                      <img class="Lista-cancion--img" src="${img}" alt="${song}"/>
                                       ${song} <br>
                                       ${artist}
                               </div>`
