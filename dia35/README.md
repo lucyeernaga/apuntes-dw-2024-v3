@@ -58,3 +58,13 @@ console.log(cochesConTyt); // ["Peugeot", "Tesla"]
 
 const cochesDeTresLetras = lista_coches.filter( coche => coche.length === 3 );
 console.log(cochesDeTresLetras); // ["BMW", "BTD"]
+```
+
+
+
+
+
+
+
+
+## Teoría 
