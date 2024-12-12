@@ -35,13 +35,20 @@
 
 
         // ---------------------------------------------
-        // 1. Constantes y variables
+        // 1. Constantes y variables (son como contenedores de info)
         // ---------------------------------------------
         const formu = document.getElementById("formTarea");
         const txtTarea = document.getElementById("txtTarea");
         const boxTareas = document.getElementById("listaTareas");
 
-        const listaDeTareas = ["Ordenar el código JS", "Crear las Funciones", "Probar el programa"];
+        // const listaDeTareas = ["Ordenar el código JS", "Crear las Funciones", "Probar el programa"];
+        const listaDeTareas = [
+            { id: 1, titulo: "Ordenar el codigo de JS", isCompletada: true },
+            { id: 524, titulo: "Crear las Funciones", isCompletada: true },
+            { id: 1056, titulo: "Probar el programa", isCompletada: true }
+        ];
+
+
 
 
         // ---------------------------------------------
@@ -65,15 +72,60 @@
                 // cargamos las nuevas tareas
                 listaDeTareas.forEach((tarea) => {
                     console.log("Tarea es: ", tarea);
-                    boxTareas.innerHTML += `<li>${tarea}</li>`;
+                    // { id: 1, titulo: "Ordenar el codigo de JS", isCompletada: true },
+
+                    const titulo = tarea.titulo;
+                    const id = tarea.id;
+
+                    // Convertir esta linea para que isChecked sea igual a "checked" o a ""
+                    const isChecked = tarea.isCompletada ? "checked" : "";
+
+
+                    // boxTareas.innerHTML += `<li>${id} ${titulo}</li>`;
+                    boxTareas.innerHTML += `
+                    <li>
+                    <input type="checkbox" id="${id}" name="chk_completada" ${isChecked} />
+                    <label for="${id}">${titulo}</label>
+                    <button onClick="eliminarTarea(${id})">X</button>
+                    <button onClick="completarTarea(${id})">Completar</button>
+                    </li>
+                    `;
                 });
         }
 
+        function agregarTarea() {
+            const nuevaTarea = txtTarea.value.trim(); // quiero saber cuanto vale el texto del input (trim elimina espacios x delante y x detrás)
+            console.log(nuevaTarea);
 
+            // Tarea inválida (hacemos un return)
+            if (nuevaTarea == "") {
+                alert("Por favor, ingresa una tarea válida");
+                return;
+            }
+
+            // Tarea válida
+            txtTarea.value = ""; // limpiar mi input
+            listaDeTareas.push(nuevaTarea); // push() es para agregar un nuevo item a la lista
+            mostrarTareas();
+        }
+
+        function eliminarTarea(idTarea) {
+            alert("Eliminar tarea: "+ idTarea);
+            // Modificar mi lista y eliminar la tarea idTarea 
+
+            mostrarTareas();
+        }
+
+        function completarTarea(idTarea) {
+            alert("Completando tarea: "+ idTarea);
+            // Modificar mi lista y cambiar el booleano de true a false, o de false a true
+
+            mostrarTareas();
+        }
 
 
         // ---------------------------------------------
-        // 4. EventListeners
+        // 4. EventListeners (es una funcion de escucha, es decir, es un metodo que espera a que hagamos algo)
         // ---------------------------------------------
 
         // escuchamos al evento cuando se envía
@@ -82,19 +134,7 @@
             // NO envíes el formulario porque quiero hacer cosas antes
             event.preventDefault();
 
-            const nuevaTarea = txtTarea.value.trim(); // quiero saber cuanto vale el texto del input 
-            console.log(nuevaTarea);
-
-            // Tarea inválida (hacemos un return)
-            if (nuevaTarea == ""){
-                alert("Por favor, ingresa una tarea válida"); 
-                return; 
-            }
-
-            // Tarea válida
-            txtTarea.value = ""; // limpiar mi input
-            listaDeTareas.push(nuevaTarea); // push() es para agregar un nuevo item a la lista
-            mostrarTareas();
+            agregarTarea();
         });
 
 
