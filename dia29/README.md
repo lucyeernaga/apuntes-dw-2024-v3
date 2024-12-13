@@ -14,58 +14,38 @@ Las funciones en Java tienen un nombre, pueden aceptar parámetros (entradas) y 
 
 
 ```js 
-
 // Funciones nombradas
-function suma(a,b) {
-    // let resultado = a+b;
-    // return resultado;
-    return a+b;
+function suma(a,b){
+    let resultado = a+b;
+    return resultado;
 }
 
-console.log(suma(5,3)); // 8
-const res = suma(24, -3); // res = 21
+console.log(suma(10,5));// 15
+const resultado = suma(24,-3); // res = 21;
 
 
+// Funciones anonimas
 
-
-
-// -----------------------------------------------
-// Funciones anónimas
-const cuadrado = function (a) {
-    return a*a; //aqui estoy definiendo la funcion
+ const cuadrado = function(a){
+    return a*a;
 }
 
-
-const res = cuadrado(3); // 9 (aqui la estoy usando)
-let res2 = cuadrado(5); // 25
+console.log(cuadrado(3));//9
 
 
-
-
-
-// ------------------------------------------------
-// Funcion Flecha
-// funcion que devuelve el cubo de un numero
-
-const cubo = function (a) {
-    return a * a * a;
+// Funciones flechas
+// funcion que devuelve el cubo de un numero.
+const cacularCubo = (num) =>{
+    return num *num * num;
 }
-const res3 = cubo(3); // 27
+ const result = calcularCubo(3)//27
 
+// funcion flecha con 1 solo parámetro y sin return
+// Recibe un numero y devuelve el doble de ese numero
 
+// Optimizacion 1: quitar parentesis cuando tengo un solo parametro
+// Optimizacion 2: si mi codigo tiene 1 sola linea, puedo devolverlo sin llaves ni return
 
-
-
-// Funcion flecha con 1 solo parametro y sin return 
-// recibe un numero y devuelve el doble de ese numero
-
-
-// optimización 1: quitar parentesis cuando tengo 1 solo parametro 
-// optimización 2: si mi código  tiene  1 sola linea, puedo devolverlo sin llaves ni return
-const doble = a => return a * 2
-
-
-console.log(doble(3)); // 6
-
-
+const calcularDoble = (num)=>{2num}
+const doble = a =>a*2;
 ```
