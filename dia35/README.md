@@ -1,70 +1,50 @@
-## Recordamos el uso de ForEach y Map
-
-- Importane: la diferencia entre uno y otro es que el forEach no retorna nada, mientras que el map retorna un nuevo array con los reultados de la función que se le pasa. 
+# Recordamos el uso de ForEach y Map
+La diferencia entre uno y otro es que el forEach no retorna nada mientras que el map retorna un nuevo array con los resultados de la funcion que se le pase.
 
 ```js
 const numeros = [1,2,3,4,5];
-
-// ejemplo utilizando forEach
 const cuadrados = [];
-numeros.forEach((num) => {
-    console.log(num);
-    cuadrados.push(num*num);
-});
 
-// numeros;forEach(num=>{
-//      console.log(num);
-//      cuadrados.push(num * num);
-// });
-console.log(cuadrados); // [1,4,9,16,25]
+numeros.forEach((numero)=>{
+    cuadrados.push(numero*numero);
+})
+console.log(cuadrados);
 
-
-// ejemplo utilizando map
-const cuadradosMap = numeros.map(num => num * num);
-console.log(cuadradosMap); // [1,4,9,16,25]
+cuadrados = numeros.map(numero => numero*numero);
+console.log(cuadrados);
 ```
 
 
 ## Métodos de Búsqueda de Array
-Los métodos de búsqueda se podrían considerar como un método map() modificada, que devuelve tanto elements¡os como booleanos. 
+Los metodos de busqueda se podrian conciderar un método map modificado que devuelve tanto elementos como booleanos.
+
+- find: devuelve el primer elemento que cumpla con determinada condición.
+- some: devuelve un verdadero o falso si al menos un elemento del array cumple con condicion a evaluar.
+- every: devuelve un verdadero o falso si todos los elementos del array cumplen con una condicion.
+- filter: devuelve todos los elementos que cumplan con una condicion.
+ 
 
 ```js
-const lista_coches = ["Peugeot", "BMW", "VW", "Tesla", "Ford", "BYD"];
+const coches = ['Peugeot','BMW','VW','Tesla','Ford','BYD'];
 
-// Find (devuelve el primer elemento que encuentre)
-const coche = lista_coches.find( coche=> coche === "BMW");
+const coche = coches.find(coche => coche === 'BMW');
 console.log(coche); // BMW
 
+const tieneTesla = coches.some(coche => coche === 'Tesla');
+console.log(tieneTesla);//true
 
-// Some (booleano, si hay alguno que cumple el requisito)
-const tieneTesla = lista_coches.some ( coche => coche === "Tesla");
-console.log(tieneTesla); // true 
+const todoEmpiezaconB = coches.every(coche => coche[0] === 'B' );
+console.log(todoEmpiezaconB);//false
 
+const cochesConB = coches.filter(coche => coche[0] === 'B');
+console.log(cochesConB);// ['BMW', 'BYD']
 
-// Every (booleano, si TODOS cumplen el requisito)
-const todosEmpiezanConB = lista_coches.every( coche => coche[0] === "B")
-console.log(todosEmpiezanConB); // false
+const cochesconT = coches.filter(coche => coche.includes('T'));
+console.log(cochesconT);// ['Tesla']
 
+const cochesconTyt = coches.filter(coche => coche.toUpperCase().includes('T'));
+console.log(cochesconTyt);//['Peugeot', 'Tesla']
 
-// Filter ( todos los elementos que CUMPLAN el requisito)
-const cochesQueEmpiezanConB = lista_coches.filter ( coche => coche [0] === "B" ); 
-console.log(cochesQueEmpiezanConB); // ["BMW", "BTD"]
-
-const cochesConT = lista_coches.filter( coche => coche.includes("T"));
-console.log(cochesConT); // ["Tesla"]
-
-const cochesConTyt = lista_coches.filter( coche => coche.toLowerCase() .includes("t"));
-console.log(cochesConTyt); // ["Peugeot", "Tesla"]
-
-const cochesDeTresLetras = lista_coches.filter( coche => coche.length === 3 );
-console.log(cochesDeTresLetras); // ["BMW", "BTD"]
+const  cochesDeTresLetras = coches.filter(coche => coche.length == 3);
+console.log(cochesDeTresLetras);// ['BMW', 'BYD']
 ```
-
-
-
-
-
-
-
-
-## Teoría 
