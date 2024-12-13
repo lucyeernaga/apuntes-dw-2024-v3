@@ -1,136 +1,115 @@
 # Scope (alcance) de variables
-En JS las variables tienen 3 diferentes alcances.
+En js las variables tienen 3 diferentes alcances.
 
-
-## Global 
-Son accesibles desde cualquier parte del código.
-
-```html
-<script>
-    let nombre= "Juan";
-</script>
-
-<script>
-    function saludar() {
-    console.log("Hola" + nombre);
-    }
-    console.log(nombre); // Juan
-    saludar(); //Hola Juan
-</script>
-```
-
-
-
-
-## Local
-Son variables definidas dentro de funciones.
+- Global: Son aquellas que son accesibles desde cualquier parte del codigo.Si se declara en la raíz del código esta puede ser utilizada en todas las subfunciones.Estas pueden saltar incluso de un script a otro en etiquetas html.
 
 ```js
-function saludar() {
-    let nombre="Juan"; // variable local
-    console.log("Hola" + nombre); // ok
+let nombre = "Luis"
+function saludar(){
+    console.log("Hola " + nombre);
 }
-
-console.log(nombre); // Error: "nombre" no está definida
-saludar(); // Imprime: "Hola Juan"
+saludar();
 ```
 
+- Alcance Local: Son variables definidas dentro de funciones o pequeños fragmentos de código.Por lo que solo podra ser llamada denro de ese fragmento de lo contrario no funcionara.
 
+```js
+function saludar(){
+    let nombre = "Luis";
+    console.log("Hola ", nombre);
+}
 
+console.log(nombre);//Error nombre no esta definido.
+saludar();// Imprime Hola Luis
+```
 
-
-
-## Bloque
-Las variables con `let` o `const`dentro de un bloque. Algunos ejemplos de bloque son `if` o `for`.
+- Bloque: las variables con let o const dentro de un bloque({}) solo son accesibles dentro de ese bloque. Algunos de ejemplos de bloque son: if o for.
 
 ```js 
-// bloque condicional "if"
-if (true) {
-    let nombre="Juan"; 
-    console.log("Hola"+ nombre); // Hola Juan
+if(true){
+let nombre = "Juan";
+console.log("Hola ", nombre);// Hola Juan
 }
-
-console.log("Hola"+ nombre); // Error: "nombre" is not defined
+console.log("Hola ", nombre);// Error nombre no esta definido
 ```
+
+
+
 
 
 ## Hoisting
-En js cuando definimos una variable con "var" estas se mueven al inicio del script.
+En js cuando definimos una variable con var estas se mueven al incio del script. Lo que puede provocar cosas inesperadas.
+Al usar `let`o `const` estas variables no se elevaran al inicio del script lo que ayuda a evitar errores.
 
-Al usar `let`o `const` estas variables no se elevaran al inicio del script (para evitar errores).
+### Operadores de comparación
+Comparación del lado derecho con el izquierdo para obtener un valor boolean.
 
-
-
-## Operadores de comparación
-Se utilizan para comparar 2 valores.
+- Igual (==): Compara si dos valores son iguales.
+- Estrictamente igual (===): Compara si los dos valores son iguales y del mismo tipo.
+- Distinto (!=): Compara si dos valores son distintos.
+- Estrictamente distinto (!===)
+- Mayor que (>) : Compara si un valor es mayor que otro
+- Menor que (<): Compara si un valor es menor que otro
+- Mayor o igual que(>=): Compara si un valor es mayor o igual que otro
+- Menor o igual que(<=): Compara si un valor es menor o igual que otro.
 
 ```js
-let numero=11;
-let esPar = (numero%2 == 0  ); // false
-let esImpar = (numero%2 == 1); // true
+let numero = 10;
+let esPar = if(numero%2 == 0) ; //true
+let esImpar = if(numero%2 == 1 ); //false
+
+let num1 = "5";
+let num2 = 5;
+let sonIguales = if(num1 == num2)//true
+    sonIguales = if(num1 === num2)// false
 ```
 
 
-- Igual (==): Compara a ver si 2 valores son iguales 
-- Estrictamente igual (==): si los 2 valores son iguales y del mismo tipo.
-- Distinto (!=): compara si los 2 valores son distintos.
-- Mayor que (>): compara si un valor es mayor que otro.
-- Menor que (<): compara  si un valor es menor que otro.
-- Mayor o igual que (>): compara si un valor es mayor o igual que otro.
-- Menor o igual que (<): compara  si un valor es menor o igual que otro.
-
-```js 
-let num1="5";
-let num2=5;
-
-const sonIguales = (num1 == num2); // true 
-const sonIguales = (num1 === num2); // false
-``` 
-
 
 ## Truthy/Falsy 
-Las variables en js pueden tener un valor de "truthy" o "falsy".
-Un valor "truthy" es aquel que se evalúa como verdadero en un contexto booleano, mientras que el "falsy" se evalúa como falso.
+Las variables en JS pueden tener un valor de truthy o falsy. Un valor truthy es aquel que se evalua como verdadero en un contexto de booleanos mientras que el falsy se evalua como falso.
 
 Podemos usar esta propiedad para la toma de decisiones en nuestro código.
 
-Valores falsy: undefined, null, NaN, 0, "" (cadena vacía), y false truthy: todo lo demás.
+Cualquier numero positivo o negativo devuelve un valor truthy y el 0 devuelve un falsy. Un arreglo vacio y un objeto vacio me devuelven un truthy.
+
+Valores falsy:
+- undefined
+- null
+- NaN
+- 0
+- "" (Cadena vacia)
+- false
 
 
 ```js 
-let edad = 18; 
-
-if (edad >= 18) {
-    // se ejecuta si el valor es truthy.
-    console.log("soy mayor de edad");
-} else {
-    // se ejecuta si el valor es falsy.
-    console.log("soy menor de edad");
+let edad = 18;
+if(edad >= 18){
+    // se ejecuta si el valor es truthy
+    console.log("Eres mayor de edad");
+}else{
+    // se ejecuta si el valor es falasy
+    console.log("Eres menor de edad");
 }
 
-
-let edad = 16; 
-
-if (numero % 2 == 0) {
-    console.log("soy par");
-} else {
-    console.log("soy impar");
-}
-    
-
-
-if (0) {
-    console.log("soy par");
-} else {
-    console.log("soy impar");
+let numero = 16;
+if(numero%2 == 0){
+    console.log("El número ", numero ,"es un número par");
+}else{
+     console.log("El número ", numero ,"es un número impar");
 }
 
+//16%2 =0 y 0 es falsy
+if(numero%2){
+    console.log("El número ", numero ,"es un número impar");
+}else{
+     console.log("El número ", numero ,"es un número par");
+}
 
-// undefined, null, NaN, 0, "" (cadena vacía), y false
-if ("") {
-    // Esto no se ejecuta
-} else {
-    // Esto SI se ejecuta
+if(false){
+    // esto no de ejecuta
+}esle{
+    // esto si se ejecuta
 }
 ```
 
@@ -138,67 +117,28 @@ if ("") {
 
 
 ### Reducción de condicionales quitando el else
-Podemos simplificar nuestro código condicional quitando el else. Esto es útil cuando no necesitamos un bloque falsy o cuando tenemos multiples condiciones.
-
-
-
+Podemos simplificar nuestro código condicional quitando el else. Esto es útil cuando no necesitamos un bloque false o cuando tenemos mulitples condiciones.
 
 ```js
-let user="cei";
-let pass="Abc123";
+let user= "cei";
+let password ="abc123";
+let mensaje = "Clave correcta";
 
-let mensaje="CORRECTA: Clave correcta";
-let tf_errores = false;
-
-pass="t cei 1234567";
-
-
-if(pass.length <= 8 ) {
-    mensaje= "INCORRECTA: La pass debe tener al menos 8 caracteres";
-    console.log(mensaje);
-    tf_errores = true;
+if(password.lenth <=  8){
+    mensjae  = "La pass debe de tener al menos 8 caracteres";
 }
+if(passwor.includes(" ")){
+    mensaje = "La pass no debe de tener espacios";
 
-if(pass.includes ("")) {
-    mensaje= "INCORRECTA: La pass no debe tener espacios";
-    console.log(mensaje);
-    tf_errores = true;
 }
-
-if(pass.includes (user)) {
-    mensaje= "INCORRECTA: La pass no puede incluir tu nombre de usuario";
-    console.log(mensaje);
-    tf_errores = true;
+if(password.includes(user)){
+    mensaje = "La pass no puede incluir tu nombre de usuario";
 }
-
-if( tf_errores == false ) {
-    console.log(mensaje); // clave correcta o incorrecta 
+if(password.toLowerCase() === password){
+    mensaje = "La pass debe de contener una letra mayúscula ";
 }
-
-
-
-
-
-
-
-// "abc 123" === "Abc 123" // falsy
-// "abc 123" === "abc 123" // truthy
-if(pass.toLowerCase () === pass ) {
-    mensaje= "INCORRECTA: La pass debe tener al menos una mayúscula";
-}
-
-// "ABC 123" === "Abc 123" // falsy
-// "ABC 123" === "abc 123" // truthy
-if(pass.toUpperCase () === pass ) {
-    mensaje= "INCORRECTA: La pass debe tener al menos una minúscula";
-}
-
-
-console.log(mensaje); // clave correcta o incorrecta
+console.log(mensaje);
 ```
-
-
-
 
 
 
@@ -206,132 +146,105 @@ console.log(mensaje); // clave correcta o incorrecta
 # Manipulación de textos
 
 1. Concatenación
+
 ```js
-let nombre="Lucas";
-let apellido="Perez";
-let nombreCompleto = nombre + " " + apellido; // Lucas Perez
+let nombre ="Luis"
+let apellido = "Estrada"
+let nombreCompleto = nombre + " " + apellido;
 
-// Concatenar utlizando +=
-let numero= 5;
-numero++; // numero = numero +1; // 6
+// Concatenar utilizando +=
+let numero = 5;
+numero += 3; 
 
-let saludo = "Hola";
-saludo += "¿Cómo estás?"; 
-console.log(saludo); // Hola, ¿cómo estás?
+let saludo = "Hola, ";
+saludo += "Como estas?";
 ```
 
-2. Interpolación: con las plantillas literales (template literals / template strings), se pueden insertar variables o expresiones dentro de una cedena usando "${}".
+2. Interpolación: Con las plantillas literales (templare literals), pueden insertar variables o expresiones dentro de una cadena usando ${}.
 
 ```js
-let nombre="Ana";
-let edad= 25;
+let nombre ="Luis"
+let apellido = "Estrada"
+let nombreCompleto = `${nombre} ${apellido}`;
 
-// Interpolación
-let mensaje= `Hola, mi nombre es ${nombre} y tengo ${edad} años.`;
-
-// Insertar expresión
-let total = 50; 
-let iva = 0.21; 
-console.log(`el total con impuestos es: ${ total + total * iva}`);
-
-
+let total = 50;
+let iva = 0.21;
+console.log(`El total con impuestos es: ${total + (total * iva)}`)
 ```
 
 
 
 3. Métodos de Strings
-JS nos ofrece una variedad de metodos para manipular cadenas de textos. Algunos ejemplos comunes son: 
-    - `toUpperCase()` y `toLowerCase()`
-    convierte todas las letras de una cadena en mayúsculas o minúsculas.
+Js nos ofrece una variedad de métodos para manipular cadenas de textos. Algunos ejemplos comunes son:
+    - `toUpperCase() y toLowerCase()
+    Colocar las letras a mayúsculas o todas minusculas
 
     - `split()`
-    divide una cadena en una lista array basada en un separador.
+    divide una cadena en una lista/array basada en un separador. Devolviendo una lista.
 
     - `slice()`
-    extrae una porción de la cadena basada en índices de inicio y fin.
+    Extrae una porcion de la cadena basada en indices de inicio y fin.Sin colocar el indice final.
 
     - `replace()`
-    reemplaza una parte de la cadena por otra. 
+    reemplaza un parte de la cadena por otra (la primer ocurrencia). 
 
     - `trim()`
-    elimina los espacios en blanco al inicio y fin de la cadena. 
+    Elimina los espacios en blanco al inicio o fin de la cadena.
 
     - `includes()`
-    verifica si una cadena contiene una subcadena espedífica.
+    Verifica si una cadena contiene una subcadena específica.
 
     - `startsWith()` y `endsWith()`
-    verifica si una cadena comienza o termina con una subcadena espedífica.
+    Verifica si una cadena inicia o termina con una cadena especifica.
 
     - `repeat()`
-    repite una cadena un número específico de veces.
+    Repite una cadena un número especifico de veces.
 
 
-    ```js  
-    let text = "Me encanta Javascript";
+```js  
+let text = "Me encanta JavaScript";
 
-    // toUpperCase y toLowerCase 
-    console.log(text.toUppercase ()); // ME ENCANTA JAVASCRIPT 
-    console.log(text.toLowerCase ()); // me encanta javascript 
+// UppeCase LowerCase
+console.log(text.toUpperCase());// ME ENCANTA JAVASCRIPT
+console.log(text.toLowerCase());// me encanta javascript
 
-    // split
-    const palabras = text.split(" ");
-    console.log(palabras); // ["Me", "encanta", "javascript"]
-    const palabras = text.split("encanta");
-    console.log(palabras_2); // ["Me", "javascript"]
+//Split
+let palabras = text.split(" "); // ['Me','encanta','javaScript']
 
-    let csv = "rojo, verde, azul"; 
-    console.log("Lista de colores: ", csv.split(","));  // ["rojo", "verde", "azul"]
-    "archivo.csv"
+//slice
+let frase = "Aprender javascript es divertido"
+console.log("Parte de frase: ", frase.slice([9,19]));//"javascript"
+console.log("Desde el inicio 9 al final: ", frase.slice(9));//"javascript es divertido"
 
+// replace
+let frase2 = "Hola mundo, hola universo";
+console.log("Reemplazar 'hola' por 'Hola' : ", frase2.replace('hola','Hola'));// Reemplazar 'hola' por 'Hola' : Hola mundo,Hola universo
+console.log("Remplazar todos los 'hola' por 'Hola': ", frase.replace(/hola/g,"Hola"));
 
+//trim
+let frase3 = "       Hola mi         nombre es       Luis      ";
+console.log(frase3.trim());// Hola mi         nombre es       Luis
 
-    // slice
-    let frase = "Aprender javascript es muy divertido";
-    console.log("Parte de frase: ", frase.slice(9,19)); // "javascript"
-    console.log("Desde el indice 9 al final: ", frase.slice (9)); // "javascript es divertido"
+//include
+let frase4 = "El sol brilla en el cielo";
+console.log("Contiene sol?: " , frase4.include("sol"));// Contine sol?: true
+console.log("Conntiene luna?: ", frase4.include("luna"));// Contine luna?: false
 
-    // replace
-    let frase = "Hola mundo. hola universo";
-    console.log("reemplazar 'hola' por 'Hola?: "; frase.replace("hola", "Hola"));
-    console.log("reemplazar todos los 'hola' por 'Hola?: "; frase.replace(/hola/g, "Hola"));
-    // cambia todos usando regEX (expresiones regulares)
+//startsWith endsWith
+let frase5 =  "JavaScript es genial";
+console.log("Empieza con Java?: " , frase5.startsWith("Java"));// Empieza con Java?:true
+console.log("Termina con genial?: ", frase5.endsWith('genial'))//Termina con genial?: true
 
+// repeat
+let risa = "Ja";
+console.log("Me causa mucha gracia: ", risa.repeat(3));// Me causa mucha gracia JaJaJa
+```
 
-    // trim
-    let frase = "     Hola mi nombre es Luka  ";
-    console.log("luego de hacer trim: ", frase.trim()); // despues de hacer trim: Hola mi    nombre es Luka"
-
-
-    // includes
-    let frase = "El sol brilla en el cielo";
-    console.log("contiene 'sol'?: ", frase.includes("sol")); 
-    console.log("contiene 'luna'?: ", frase.includes("luna")); 
-
-
-    // starsWith y endsWith 
-    let frase = "Javasript es genial"; 
-
-    console.log("¿Empieza con 'Java'?: ", frase.starsWith("Java")); // true
-    console.log("¿Termina con 'genial'?: ", frase.endsWith("genial")); // true
-
-
-    // repeat 
-    let risa = "Ja"; 
-    console.log("Me causa mucha gracia:", risa.repeat(3)); // JaJaJa
-    ```
-
-    Podemos cambiar los metodos
-
-    ```js
-    letfrase = "   No me gusta javascript en diseño web   ";
-
-    let resultado = frase.trim() // elimina espacios en blanco
-                         .toUpperCase() // convierte el texto a mayusculas 
-                         .replace();  // reemplaza texto en mayusculas pq el metodo anterior le hizo .toUpperCase()
-    
-    console.log(resultado); // ME ENCANTA JAVASCRIPT EN DISEÑO WEB
-
-    ```
-
-
-
+Podemos combinar los métodos como en el ejemplo siguiente.
+```js
+let frase = "    No me gusta Javascript en diseño web     ";
+let resultado = frase.trim()// elimina espcios
+                     .toUpperCase()// convierte el texto a mayúsculas
+                     .replace('NO ME GUSTA', ' ME ENCANTA');// reemplaza el texto en mayúsculas porque el método anterior le hizo toUpperCase().
+console.log(resultado)// ME ENCANTA JAVASCRIPT EN DISEÑO WEB
+```

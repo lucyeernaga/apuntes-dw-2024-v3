@@ -1,57 +1,80 @@
 
 # Emmet 
-ver emmet.html
+Nos permite escrir HTMl y CSS Emmet:
 
+- | Nos metemos dentro de la caja (crear un hijo)
+- . Agregamos una o mas clases
+- #Agregamos un id
+- Agregar sibbling/hermano
+- *Repetidor/cantidad
+- {} colocar contenido o texto dentro del elemento
+- $ dentro del contenido enumerar elementos
+- lorem10 tetxo lorem ipsum de 10
+- () agrupar elementos Emmet
+
+main.contenido.modo--obscuro#contenido1>(h1.titulo+p.texto>lorem10)+(ul>li*5{Item de Lista $})+footer.pie
+
+//Realizaria esto en html
+  <main class="contenido modo--obscuro" id="contenido1">
+        <h1 class="titulo"></h1>
+        <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, molestias.</p>
+        <ul>
+            <li>Item de Lista 1</li>
+            <li>Item de Lista 2</li>
+            <li>Item de Lista 3</li>
+            <li>Item de Lista 4</li>
+            <li>Item de Lista 5</li>
+        </ul>
+        <footer class="pie"></footer>
+    </main>
 
 
 
 # Variables en CSS
-Se pueden crear variables para reutilizar valores en distintas partes del código. 
+Se pueden crear variables para reutilizar valores en distintas partes del codigo.
 
-- Mejorar la legilibilidad del código
-- Facilitar la actualización de los valores
+- Mejorar la legibilidad del código
+- Facilitar la actualización de los valores.
+- Se pueden crear de manera global en la raíz del documento en caso Web <html>.En otros caso en imagenes SVG es la etiqueta <svg>.
+- Para que Css lo reconozca debe de tener dos guiones medio.
 
-Se pueden crear de manera global en la raíz del documento, que en el caso de webs es <html>. En otros casos x ejemplo en img SGV, es la etiqueta <sgv>
-
-Ej e uso en bootstrap:
+Ejemplo de uso Bootstrap
 https://getbootstrap.com/docs/5.0/customize/css-variable
 
 ```css
+*{
+    margin:0;
+}
 :root {
-    --blue: #1e90ff;
-    --white: #fff;
+    --blue : #1e90ff;
+    --wwhite: #fff;
     --danger: red;
-    --primary: #aaaccb;
+    --primary:#aaaccb;
+
 }
 
-.dark-mode {
-    --primary: #bbbaac; 
+.dark-mode{
+    --primary: #bbbbaacc;
 }
 
-.container {
-    background-color: var(--blue); 
-    color: var(--white); 
+.container{
+    background-color: var(--primary);
+    color: var(--white);
+
 }
-
-
 ```
 
 
 # Metodologia Suit CSS
 https://suitcss.github.io/
 
-SuitCSS se utuliza en muchos frameworks como Angular, React, etc. Es una nomenclatura basada en BEM, pero con algunas diferencias.
-Sus partes son: "componentes", "elementos", "modificadores", "estados", "utilidades"
-
-
-## Partes 
-
-- ComponenteName (PascalCase)
-- ComponenteName-elementName (-camelCase)
-- ComponenteName-modifierName (--camelCase)
-- ComponenteName.isStateOfComponent (.isPascalCase, .hasPascalCase, .focusPascalCase, .onPascalCase)
-- u-utilityName (u-camelCase)
-
+Se utiliza en muchos frameworks como Angular, React, etc. Es una nomenclatura basada en BEM, pero con algunas diferencias.
+Sus partes son :
+- Componentes
+- Elementos
+- Modificadores
+- Estados: Son modificadores pero temporales de un elemento(actvivo, inactivo, abierto,cerrado), y son independientes de los componentes en que se utilizan.
+- Utilidades: Es una clase que se puede aplicar a cualquier etiqueta y que no tiene relación con el componente.Haciendo una lista de utilidades se puede utilizar para todo.
 
 ## Componente (bloque) y elementos
 
