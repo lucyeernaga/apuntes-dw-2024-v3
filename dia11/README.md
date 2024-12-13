@@ -1,44 +1,98 @@
+# Sistema responsive de sitios web
 
-<!-- el mediaqueryn nos permite: dependiendo de una pregunta (ej. ¿cual es el ancho de la pantalla?), te va a mostrar un estilo u otro. -->
+## Media Queries !
+Son una herramienta de CSS que nos permite aplicar diferentes estilos según el tamaño de la pantalla o las características del dispositivo donde se está viendo la página web.
+Son muy útiles para crear sitios web responsivos, es decir, que se adaptan bien a distintos dispositivos (como móviles, tabletas y escritorios).
 
-# Media Queries !
+### ¿Cómo funcionan?
+Los media queries permiten aplicar reglas de estilo específicas solo cuando se cumplen ciertas condiciones (por ejemplo, cuando el ancho de la pantalla es menor a 600 píxeles). Estas condiciones pueden estar relacionadas con:
 
-## ¿Qué es? 
-es una declaración de CSS que nos permite definir los estilos de nuestra web
+- El ancho y la altura de la pantalla.
+- La orientación de la pantalla (vertical u horizontal).
+- La resolución de la pantalla.
 
-## Sintaxis de una MQ
+### Sintaxis de Media Query
+Una MQ se compone de multiples partes: 
+- @media: que es una palabra clave reservada 
+- Media Type: son una manera de especificar el tipo de dispositivo para el que aplicamos los estilos.
 
-una MQ se compone de multiples partes: 
-- un @media, que es una palabra clave reservada 
-- un tipo de media. hay varios tipos de media [que se les llama Media Type]: 
-
-        - screen (como la del móvil, desktop, tablet..)
-        - print (es una pantalla de impresión), 
-        - all (son todos los tipos de pantallas posibles)
-        - speech (unireader, sistema que va leyendo los HTML en voz alta)
+1. screen: Para pantallas (computadoras, tabletas, teléfonos, etc.).
+2. print: aplica los estilos cuando el contenido de la página se va a imprimir. 
+3. all: se aplica a todos los dispositivos: tanto pantallas como impresoras o cualquier otro medio. Es una forma general de aplicar estilos sin importar el dispositivo.
+4. speech: Aplica estilos en dispositivos de síntesis de voz o lectores de pantalla.
 
 - operadores (ej. and, not, only)
-- breakpoint, que es una condición (mas-width, min-width, etc)
+- breakpoint, que es una condición (max-width, min-width, portrait, landscape, etc)
 - un bloque de CSS        
 
 
-
+Ejemplo Screen: aquí el fondo de la página se cambiará a lightblue solo en dispositivos con pantallas y cuando el ancho de la pantalla sea menor o igual a 768px.
 ```css
-/* // @media screen and (breakpoint) { } */
-body {
-    bakcgroun-color: lightgreen; 
-}
-
-@media screen and (min-width: 600px;) {
-    body {
-        background-color: lightblue; 
-    }
+@media screen and (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
 }
 ```
 
 
+Ejemplo Print: aquí el fondo de la página se cambia a blanco y el tamaño de la fuente se reduce cuando se imprime, además de ocultar elementos con la clase .no-imprimir.
 ```css
-/*Combinación de Breakpoints*/ 
+@media print {
+  body {
+    font-size: 12px;
+    background-color: white; /* Eliminamos cualquier fondo */
+  }
+  .no-imprimir {
+    display: none; /* Ocultamos elementos que no deben aparecer en la impresión */
+  }
+}
+
+```
+
+
+Ejemplo All: aquí, el estilo se aplica a todos los dispositivos, ya sea que se esté mostrando en una pantalla o que se vaya a imprimir.
+```css
+@media all {
+  body {
+    font-family: Arial, sans-serif;
+  }
+}
+```
+
+
+Ejemplo Portrait: Se usa cuando la pantalla está en orientación vertical (altura mayor que el ancho). Es común en dispositivos como teléfonos cuando están sostenidos en posición normal.
+```css
+@media (orientation: portrait) {
+  /* Estilos para modo vertical */
+}
+```
+
+
+Ejemplo Landscape: Se usa cuando la pantalla está en orientación horizontal (ancho mayor que la altura). Es común cuando el dispositivo está girado, como al ver videos en un teléfono o usar una computadora de escritorio.
+```css
+@media (orientation: landscape) {
+  /* Estilos para modo horizontal */
+}
+```
+
+
+
+
+
+
+
+### Cómo combinarlos
+Los Media Types se pueden combinar con condiciones (como min-width o max-width) para hacer que los estilos se apliquen en función de características específicas de los dispositivos.
+
+```css
+/* Para pantallas de dispositivos con una anchura máxima de 600px */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
 /* tiene que ser una pantalla, tiene que tener un ancho minimo de 600px y un ancho máximo de 800px, entonces al probar esta regla se va a ver azul solo cuando esté entre 600 y 800. Cuando esté en menos de 600 se va a ver verde y cuando esté mas de 800 se va a ver verde, por eso se usa el operador "and" */
 @media screen and (min-width: 600px) and (max-width: 800px) {
     body {
@@ -46,52 +100,35 @@ body {
     }
 }
 
-/* Orientación del dispositivo*/   
-/*Si ponemos el formato de landscape, va a fijarse en si el ancho es + que el ancho y existen (landscape y portrait)*/
-@media screen and (prefers-color-schema: dark) {
-    body {
-        background-color: black;
-        color: white; 
-    }
-}
-
-/* Modo Oscuro*/
-@media screen and (orientation: landscape) {
-    body {
-        background-color: lightblue; 
-    }
-}
-```
-
-
-
-
-
-
-
- ## Media 
-- all: todos los dispositivos
-- print: vista previa de impresión
-- screen: pantallas a color (tablets, moviles, ordenadores)
-- speech: dispositivos que convierten texto a voz
-- otros elementos depreciados: tv, handheld, braille, etc. (que no se usan mas en css)
-
-
-```css
-/*cualquier cosa que tenga la clase no-print, se le pone un display: none;Así cuando imprimamos si algo tiene la clase no-print, no se va a imprimir en esa pantalla*/
-.no-imprimir {
-    display: block; 
-}
+/* Para impresoras */
 @media print {
-    .no-imprimir {
-        display: none;
-    }
+  body {
+    background-color: white;
+    font-size: 12px;
+  }
+}
+
+/* Para todos los dispositivos */
+@media all {
+  body {
+    margin: 20px;
+  }
+}
+
+/* Para dispositivos en modo retrato con un ancho de pantalla máximo de 600px */
+@media (orientation: portrait) and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Para dispositivos en modo paisaje con un ancho de pantalla mínimo de 601px */
+@media (orientation: landscape) and (min-width: 601px) {
+  body {
+    font-size: 18px;
+  }
 }
 ```
-
-
-
-
 
 
 ## Tips para utilizarlo
