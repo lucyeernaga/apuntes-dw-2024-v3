@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do list</title>
+    <title>ToDo List</title>
 </head>
 
 <body>
@@ -42,10 +42,10 @@
         const boxTareas = document.getElementById("listaTareas");
 
         // const listaDeTareas = ["Ordenar el código JS", "Crear las Funciones", "Probar el programa"];
-        const listaDeTareas = [
+        let listaDeTareas = [
             { id: 1, titulo: "Ordenar el codigo de JS", isCompletada: true },
-            { id: 524, titulo: "Crear las Funciones", isCompletada: true },
-            { id: 1056, titulo: "Probar el programa", isCompletada: true }
+            { id: 524, titulo: "Crear las Funciones", isCompletada: false },
+            { id: 1056, titulo: "Probar el programa", isCompletada: false }
         ];
 
 
@@ -80,14 +80,20 @@
                     // Convertir esta linea para que isChecked sea igual a "checked" o a ""
                     const isChecked = tarea.isCompletada ? "checked" : "";
 
+                    // if(tarea.isCompletada){
+                    //    isChecked = "checked"; 
+                    // } else {
+                    //    isChecked = ""; 
+                    // }
+
 
                     // boxTareas.innerHTML += `<li>${id} ${titulo}</li>`;
                     boxTareas.innerHTML += `
                     <li>
                     <input type="checkbox" id="${id}" name="chk_completada" ${isChecked} />
                     <label for="${id}">${titulo}</label>
-                    <button onClick="eliminarTarea(${id})">X</button>
-                    <button onClick="completarTarea(${id})">Completar</button>
+                    <button onclick="eliminarTarea(${id})">X</button>
+                    <button onclick="completarTarea(${id})">Completar</button>
                     </li>
                     `;
                 });
@@ -105,22 +111,60 @@
 
             // Tarea válida
             txtTarea.value = ""; // limpiar mi input
-            listaDeTareas.push(nuevaTarea); // push() es para agregar un nuevo item a la lista
+            // listaDeTareas.push(nuevaTarea); // push() es para agregar un nuevo item a la lista
+
+            // Simulamos un id nuevo, entre 0 y 99
+            const nuevoID = parseInt(Math.random()*100);
+
+
+            const objetoTarea = { id: nuevoID, titulo: nuevaTarea, isCompletada: false };
+            console.log("Nueva tarea a agregar es: ", objetoTarea);
+
+            listaDeTareas.push(objetoTarea);
             mostrarTareas();
         }
 
         function eliminarTarea(idTarea) {
-            alert("Eliminar tarea: "+ idTarea);
+            alert("Eliminar tarea: " + idTarea);
             // Modificar mi lista y eliminar la tarea idTarea 
 
-            mostrarTareas();
+            // 1. metodo usando forEach y Splice
+            // listaDeTareas.forEach( (tarea, posicion) => {
+            //     if(tarea.id == idTarea){
+            //         listaDeTareas.splice(posicion, 1);
+            //     }
+            // });
+
+            // 2. metodo usando findIndex
+            // const posicion = listaDeTareas.findIndex( tarea => tarea.id == idTarea  );
+            // listaDeTareas.splice(posicion, 1); 
+
+            
+            // 3. metodo usando filter
+            listaDeTareas = listaDeTareas.filter(tarea => tarea.id != idTarea ); 
+
+
+            mostrarTareas(); // re-imprimir lista actualizada
         }
 
         function completarTarea(idTarea) {
-            alert("Completando tarea: "+ idTarea);
+            alert("Completando tarea: " + idTarea);
             // Modificar mi lista y cambiar el booleano de true a false, o de false a true
 
-            mostrarTareas();
+            // 1. buscar el elemento con el id deseado 
+            const tarea = listaDeTareas.find( (t) => t.id == idTarea );
+            console.log("Tarea encontrada:", tarea); 
+            // { id: 524, titulo: "Crear las Funciones", isCompletada: false },
+
+            // 2. cambiar el valor de isCompletada
+            // if(tarea.isCompletada == true) {
+            //     tarea.isCompletada = false;
+            // } else {
+            //     tarea.isCompletada = true;
+            // }
+            tarea.isCompletada = !tarea.isCompletada; // toggle
+
+            mostrarTareas(); // re-imprimir lista actualizada
         }
 
 
@@ -130,10 +174,8 @@
 
         // escuchamos al evento cuando se envía
         formu.addEventListener("submit", (event) => {
-
             // NO envíes el formulario porque quiero hacer cosas antes
             event.preventDefault();
-
             agregarTarea();
         });
 

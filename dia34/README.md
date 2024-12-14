@@ -14,7 +14,7 @@ Estructura de JS
 - push: nos permite añadir un nuevo elemento al final del array y devuelve el nuevo lenght de la lista
 - push: nos permite añadir un nuevo elemento al final del array y devuelve el nuevo lenght de la lista
 - shift: Elimina el primer elemento del array y devuelve dicho elemento.
-- splice: Tine tres parametros y devuelve elementos eliminados - indice donde se va a posicionar - cantidad de elementos a eliminar - elementos a agregar.
+- splice: Tiene tres parametros y devuelve elementos eliminados - indice donde se va a posicionar - cantidad de elementos a eliminar - elementos a agregar.
 - indexOf: nos permite saber el indice de un elemento
 
 ```js 
