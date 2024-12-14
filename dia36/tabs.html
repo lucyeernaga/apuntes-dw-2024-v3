@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <style>
+        .Tabs-contenido {
+            display: none;
+        }
+
+        .Tabs-buttons {
+            display: flex;
+            list-style: none;
+            cursor: pointer;
+        }
+
+        .Tabs-button {
+            padding: 10px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+        }
+
+
+        /* Utilities */
+        .u-active {
+            background-color: #fff;
+            border: 1px solid green;
+        }
+
+        .u-visible {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="Tabs">
+
+        <ul class="Tabs-buttons">
+            <li data-tab="pagina1" class="Tabs-button">Pendientes</li>
+            <li data-tab="pagina2" class="Tabs-button">Todas</li>
+            <li data-tab="pagina3" class="Tabs-button">Perfil</li>
+        </ul>
+
+        <div class="Tabs-container">
+            <div id="pagina1" class="Tabs-contenido">
+                <h2>Página 1</h2>
+                <p>Contenido de página 1</p>
+            </div>
+            <div id="pagina2" class="Tabs-contenido">
+                <h2>Página 2</h2>
+                <p>Contenido de página 2</p>
+            </div>
+            <div id="pagina3" class="Tabs-contenido">
+                <h2>Página 3</h2>
+                <p>Contenido de página 3</p>
+            </div>
+        </div>
+
+    </div>
+    
+    <script>
+        // 1. Creamos variables y constantes
+        const listaBotones = document.querySelectorAll(".Tabs-button");
+        const listaPaginas = document.querySelectorAll(".Tabs-contenido");
+
+
+        // 2. Creamos funciones y eventListeners
+        listaBotones.forEach( boton => {
+            boton.addEventListener("click", ()=> {
+
+                // leer el dataset con atributo "data-tab"
+                // x ej, si tengo "data-set" debería leerlo con "boton.dataset.edad"
+                const targetID = boton.dataset.tab; // pagina1, pagina2, pagina3
+                const target = document.getElementById(targetId);
+
+                
+
+                // al target con id "paginaX" le agregué la clase u-visible
+                target.classList.add("u-visible");
+
+
+                
+                // agregar la clase active al Tabs-button
+                boton.classList.add("u-active");
+            });
+        });
+
+        function quitarClases( ){
+            listaBotones.forEach( item => {
+                    item.classList.remove("u-active");
+                })
+            listaPaginas.forEach( pagina => {
+                    pagina.classList.remove("u-visible");
+                })    
+        }
+
+        // 3. Inicializamos nuestro programa
+    </script>
+</body>
+</html>
