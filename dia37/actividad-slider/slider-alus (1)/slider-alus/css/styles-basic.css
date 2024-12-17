@@ -1,5 +1,5 @@
 
-body {
+.Body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,21 +7,21 @@ body {
     margin: 0;
 }
 
-.slider {
+.Slider {
     overflow: hidden;
     border: 2px solid #ddd;
     border-radius: 10px;
     position: relative;
 }
 
-.slider-images {
+.Slider-images {
     display: flex;
     width: 400px;
     height: 600px;
     transition: transform 0.5s ease;
 }
 
-.slider-images img {
+.Slider-img {
     min-width: 400px;
     min-height: 600px;
     max-height: 600px;
@@ -32,7 +32,7 @@ body {
 
 
 
-button {
+.Btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -43,15 +43,16 @@ button {
     cursor: pointer;
 }
 
-.btnPrev {
+/*  Position de elementos */
+.u-izq {
     left: 10px;
 }
 
-.btnNext {
+.u-der {
     right: 10px;
 }
 
-.contador {
+.Slider-contador {
     position: absolute;
     bottom: 10px;
     left: 50%;

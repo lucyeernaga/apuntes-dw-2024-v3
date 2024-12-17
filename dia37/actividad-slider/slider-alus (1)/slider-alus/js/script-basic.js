@@ -1,13 +1,22 @@
+// -------------------------------------------------------------------
+// 1. Declaro constantes y variables
+// -------------------------------------------------------------------
 
 
-const sliderImages = document.querySelector('.slider-images');
-const images = document.querySelectorAll('.slider-images img');
-const btnNext = document.querySelector('.btnNext');
-const btnPrev = document.querySelector('.btnPrev');
+const sliderImages = document.querySelector('.Slider-images');
+const images = document.querySelectorAll('.Slider-img');
+const btnNext = document.querySelector('#btnNext');
+const btnPrev = document.querySelector('#btnPrev');
 const spanActual = document.getElementById('actual');
 const spanTotal = document.getElementById('total');
 let currentImageIndex = 0;
 const totalImages = images.length;
+
+// -------------------------------------------------------------------
+// 2. EventListeners y Funciones
+// -------------------------------------------------------------------
+
+
 btnNext.addEventListener('click', nextImage);
 btnPrev.addEventListener('click', prevImage);
 
@@ -36,9 +45,18 @@ function actualizarContador() {
     spanActual.textContent = currentImageIndex + 1;
 }
 
+
+// -------------------------------------------------------------------
+// 3. Inicializamos/Ejecutamos nuestro código
+// -------------------------------------------------------------------
+
 spanTotal.textContent = totalImages;
 actualizarContador();
-agregarIntervalo();
+
+
+// -------------------------------------------------------------------
+// 4. Funcionalidad de Interval
+// -------------------------------------------------------------------
 
 sliderImages.addEventListener('mouseover', () => {
     clearInterval(intervalos);
@@ -50,3 +68,12 @@ function agregarIntervalo() {
     intervalos = setInterval(nextImage, 1000);
 }
 
+agregarIntervalo();
+
+
+
+
+
+// corregir codigo para que sea suit
+// comentar js y css los elementos importantes
+// aprender a manejar el intervalo: activar/ desactivar, cambiar tiempo
