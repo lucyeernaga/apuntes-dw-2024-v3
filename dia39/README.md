@@ -57,7 +57,24 @@ Como debemos esperar a que una tarea asíncrona termine para poder continuar con
 ## Promesas
 La gran desventaja de los callbacks es que se pueden anidar y se vuelven muy dificiles de leer y mantener. A estp se llama `Callback Hell`. Por eso se han creado las `Promesas`.
 
+```js
+const miPromesa = new Promise( (resolve, reject) => {
+    console.log("Ejecutando lo que te prometí");
+    setTimeout( ()=> {
+        resolve("EXITO!");
+    }, 3000 )
 
+} );
+miPromesa.then(result => {
+            console.log(result);  return "Exito 2!";  
+        }).then(result => {
+            console.log(result); return "Exito3!";   
+        }).then(result => {
+            console.log(result);   return "Exito 4!";   
+        }).then(result => { console.log(result); 
+        }).catch(error => co
+.catch(error => console.log("Tuve un error", error));
+```
 
 ## Fetch con promesas
 
