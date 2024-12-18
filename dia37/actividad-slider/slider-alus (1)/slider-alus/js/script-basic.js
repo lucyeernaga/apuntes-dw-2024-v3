@@ -12,6 +12,10 @@ const spanTotal = document.getElementById('total');
 let currentImageIndex = 0;
 const totalImages = images.length;
 
+const lista_imagenes = [
+    {}, {}, {}
+]
+
 // -------------------------------------------------------------------
 // 2. EventListeners y Funciones
 // -------------------------------------------------------------------
@@ -58,13 +62,24 @@ actualizarContador();
 // 4. Funcionalidad de Interval
 // -------------------------------------------------------------------
 
+// esta funcion lo que hace es: coger el listener para cuando paso el mouse por encima de sliderImages
 sliderImages.addEventListener('mouseover', () => {
+    // console.log("ESTOY ENCIMA"); 
+    // elimina cualquier timer guardado dentro de "intervalo"
     clearInterval(intervalos);
 });
+
+
 sliderImages.addEventListener('mouseout', () => {
+    // console.log("ME FUI DEL SLIDER");
     agregarIntervalo();
 });
+
+
+
 function agregarIntervalo() {
+    // guardo en "intervalos"...
+    // crear un intervalo con setInterval ("funcion a ejecutar", tiempo);
     intervalos = setInterval(nextImage, 1000);
 }
 
